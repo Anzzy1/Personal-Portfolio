@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 import { featuredProjects } from "@/content/projects";
 import { useChat } from "@/components/ai/chat-provider";
 import { AiMark } from "@/components/ai/ai-mark";
@@ -45,7 +44,7 @@ export function FeatureCards() {
       {featured && (
         <Link
           href={`/work/${featured.slug}`}
-          className="group relative isolate flex items-center gap-5 overflow-hidden rounded-2xl bg-[#3A4BFF] p-6 text-white shadow-[0_24px_48px_-24px_rgb(58_75_255/0.7)] ring-1 ring-black/5 transition-transform duration-500 ease-[var(--ease-out)] hover:-translate-y-0.5 dark:ring-white/10"
+          className="group relative isolate flex flex-col items-start gap-5 overflow-hidden rounded-2xl bg-[#3A4BFF] p-6 sm:flex-row sm:items-center text-white shadow-[0_24px_48px_-24px_rgb(58_75_255/0.7)] ring-1 ring-black/5 transition-transform duration-500 ease-[var(--ease-out)] hover:-translate-y-0.5 dark:ring-white/10"
         >
           {/* BaonBuddy's candy palette drifting over cobalt, with a faint dot grid + grain */}
           <span className="mesh-a absolute -right-[12%] -top-[60%] -z-10 size-[65%] rounded-full bg-[radial-gradient(circle,#D7F25C,transparent_62%)] opacity-60 blur-2xl" />
@@ -55,11 +54,11 @@ export function FeatureCards() {
           <span className="absolute inset-0 -z-10 [background:var(--grain)] opacity-60" />
 
           <span className="flex min-w-0 flex-1 flex-col gap-1.5">
-            <span className="flex items-center gap-1.5 text-[13px] font-medium text-white/75">
+            <span className="flex items-center gap-1.5 pr-20 text-[13px] font-medium text-white/75 sm:pr-0">
               <span className="size-1.5 rounded-full bg-[#D7F25C]" />
               Featured project · {featured.year}
             </span>
-            <span className="flex flex-wrap items-baseline gap-x-2.5 gap-y-0.5">
+            <span className="flex flex-wrap items-baseline gap-x-2.5 gap-y-0.5 pr-20 sm:pr-0">
               <span className="text-[22px] font-semibold tracking-[-0.03em] group-hover:underline group-hover:underline-offset-[4px]">
                 {featured.title}
               </span>
@@ -82,16 +81,15 @@ export function FeatureCards() {
             </span>
           </span>
 
-          {/* Buddy on a tilted lime tile with a peso coin, like the app's logo */}
-          <span className="relative hidden shrink-0 sm:block">
-            <span className="block size-[104px] -rotate-6 overflow-hidden rounded-[28px] bg-[#D7F25C] shadow-[0_16px_32px_-12px_rgb(14_14_16/0.5)] ring-2 ring-[#0E0E10] transition-transform duration-500 ease-[var(--ease-out)] group-hover:-rotate-2 group-hover:scale-105">
+          {/* Buddy on a tilted lime tile with a peso coin, like the app's logo: top-right corner on phones, beside the text from sm up */}
+          <span className="absolute right-6 top-6 shrink-0 sm:relative sm:right-auto sm:top-auto">
+            <span className="block size-16 -rotate-6 overflow-hidden rounded-[18px] bg-[#D7F25C] sm:size-[104px] sm:rounded-[28px] shadow-[0_16px_32px_-12px_rgb(14_14_16/0.5)] ring-2 ring-[#0E0E10] transition-transform duration-500 ease-[var(--ease-out)] group-hover:-rotate-2 group-hover:scale-105">
               <BuddyMascot className="block size-full" />
             </span>
-            <span className="absolute -right-3 -top-3 grid size-9 rotate-12 place-items-center rounded-full bg-[#FFB98F] text-[15px] font-bold text-[#0E0E10] ring-2 ring-[#0E0E10] transition-transform duration-500 ease-[var(--ease-out)] group-hover:rotate-[30deg]">
+            <span className="absolute -right-2.5 -top-2.5 grid size-8 rotate-12 text-[14px] sm:-right-3 sm:-top-3 sm:size-9 sm:text-[15px] place-items-center rounded-full bg-[#FFB98F] font-bold text-[#0E0E10] ring-2 ring-[#0E0E10] transition-transform duration-500 ease-[var(--ease-out)] group-hover:rotate-[30deg]">
               ₱
             </span>
           </span>
-          <ArrowUpRightIcon className="absolute right-4 top-4 size-5 text-white/70 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white sm:hidden" />
         </Link>
       )}
     </div>
