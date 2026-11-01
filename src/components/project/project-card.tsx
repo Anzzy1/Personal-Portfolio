@@ -14,7 +14,8 @@ export function ProjectCard({ project, wide, index }: { project: Project; wide?:
     >
       <ProjectVisual
         project={project}
-        className={cn(wide && "sm:aspect-[2/1]")}
+        // Covers are 4:3 and must show whole; only generated previews go wide
+        className={cn(wide && !project.cover && "sm:aspect-[2/1]")}
         zoomOnHover
       />
       <div className={cn("flex flex-1 flex-col px-3 pb-3 pt-4", wide && "sm:px-4 sm:pt-5")}>

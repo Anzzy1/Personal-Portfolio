@@ -59,7 +59,7 @@ export function ProjectVisual({
       <div
         style={projectTheme(project)}
         className={cn(
-          "relative aspect-[16/10] overflow-hidden rounded-[12px] border border-border bg-surface-2",
+          "relative aspect-[4/3] overflow-hidden rounded-[12px] border border-border bg-surface-2",
           className,
         )}
       >
@@ -354,7 +354,7 @@ function KapeLunaPreview() {
             alt="Kape Luna landing page: an iced Spanish Latte in golden-hour light, the Kape Luna wordmark, and a featured-drink card"
             fill
             sizes="(min-width: 1024px) 640px, 100vw"
-            className="object-cover object-top"
+            className="object-cover object-left-top"
           />
         </div>
       </div>

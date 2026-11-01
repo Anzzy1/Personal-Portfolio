@@ -44,6 +44,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "baonbuddy",
+    cover: "/images/projects/baonbuddy-cover.jpg",
     color: "#3a4bff",
     title: "BaonBuddy",
     summary:
@@ -91,6 +92,7 @@ export const projects: Project[] = [
   },
   {
     slug: "tindahub",
+    cover: "/images/projects/tindahub-cover.jpg",
     color: "#0f7a55",
     title: "TindaHub",
     summary:
@@ -136,6 +138,7 @@ export const projects: Project[] = [
   },
   {
     slug: "portfolio-ai-assistant",
+    cover: "/images/projects/anzyy-ai-cover.jpg",
     color: "#f2541b",
     title: "Anzyy AI",
     summary:
@@ -219,6 +222,7 @@ export const projects: Project[] = [
   },
   {
     slug: "playlist-cafe",
+    cover: "/images/projects/playlist-cafe-cover.jpg",
     color: "#7a5236",
     title: "Playlist Cafe",
     summary:
