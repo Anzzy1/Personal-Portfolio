@@ -401,7 +401,7 @@ function PlaylistCafePreview() {
           <span className="size-[1cqw] min-h-1 min-w-1 rounded-full bg-[#febc2e]" />
           <span className="size-[1cqw] min-h-1 min-w-1 rounded-full bg-[#28c840]" />
           <span className="ml-[2cqw] rounded-full bg-black/5 px-[1.6cqw] py-[0.3cqw] font-mono text-[clamp(4px,1.1cqw,10px)] text-[#6b5848]">
-            playlistcafe.ph
+            playlistcafe.vercel.app
           </span>
         </div>
         <div className="relative h-[93.5%]">

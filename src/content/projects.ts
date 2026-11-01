@@ -256,7 +256,7 @@ export const projects: Project[] = [
       "Transcribing four in-store menu boards — hot/iced sizes, sharing plates, wing flavors and dips — into one clean, readable menu",
       "Keeping heavy scroll motion smooth on mid-range phones",
     ],
-    demo: "",
+    demo: "https://playlistcafe.vercel.app/",
     github: "https://github.com/Anzzy1/Playlist-Cafe",
   },
 ];
