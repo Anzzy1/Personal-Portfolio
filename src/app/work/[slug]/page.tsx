@@ -73,18 +73,11 @@ async function ProjectContent({ params }: { params: Promise<{ slug: string }> })
           {project.title}
         </h1>
         <p className="lead mt-4 max-w-2xl text-pretty">{project.summary}</p>
-        {(project.demo || project.github) && (
+        {project.demo && (
           <div className="mt-7 flex flex-wrap gap-3">
-            {project.demo && (
-              <ButtonLink href={project.demo} external={project.demo.startsWith("http")} magnetic>
-                Live demo
-              </ButtonLink>
-            )}
-            {project.github && (
-              <ButtonLink href={project.github} variant="secondary" external>
-                Source code
-              </ButtonLink>
-            )}
+            <ButtonLink href={project.demo} external={project.demo.startsWith("http")} magnetic>
+              View live site
+            </ButtonLink>
           </div>
         )}
       </header>
