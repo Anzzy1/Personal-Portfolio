@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { StorefrontIcon } from "@phosphor-icons/react/dist/ssr";
+import { GlobeSimpleIcon, StorefrontIcon } from "@phosphor-icons/react/dist/ssr";
 import { siFreecodecamp } from "simple-icons";
 import type { Project } from "@/content/projects";
 import type { Certification } from "@/content/certifications";
@@ -83,16 +83,46 @@ const projectThumbs: Record<string, () => React.ReactNode> = {
     </Frame>
   ),
   "kape-luna": () => (
-    <Frame className="bg-[#1a110b]">
-      <Image src="/images/projects/kape-luna-thumb.jpg" alt="" fill sizes="72px" className="object-cover" />
+    <Frame className="bg-[radial-gradient(circle_at_40%_40%,#3a2516,#120c08)]">
+      <Glow className="-right-3 -top-4 bg-[#e9be82]/60" />
+      {/* Brand mark: crescent moon with a sparkle */}
+      <svg viewBox="0 0 32 32" className="size-8 -translate-x-[3px] drop-shadow-[0_2px_6px_rgb(233_190_130/0.45)]">
+        <defs>
+          <linearGradient id="kape-luna-gold" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor="#f6e2bc" />
+            <stop offset="1" stopColor="#c8955a" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M19.5 4.6A12 12 0 1 0 27.4 22a10 10 0 0 1-7.9-17.4Z"
+          fill="url(#kape-luna-gold)"
+        />
+        <path d="M21 10.5l1.1 3.4 3.4 1.1-3.4 1.1L21 19.5l-1.1-3.4-3.4-1.1 3.4-1.1Z" fill="url(#kape-luna-gold)" />
+      </svg>
+      <WebsiteBadge className="bg-[#e9be82] text-[#2a1a10] ring-[#1a110b]" />
     </Frame>
   ),
   "playlist-cafe": () => (
-    <Frame className="bg-[#2a1c13]">
-      <Image src="/images/projects/playlist-cafe-thumb.jpg" alt="" fill sizes="72px" className="object-cover" />
+    <Frame className="bg-[linear-gradient(160deg,#4a2c1c,#1c120c)]">
+      <Glow className="-right-3 -top-5 bg-[#f08a5d]" />
+      <Glow className="-bottom-6 -left-4 bg-[#d36a8a]/70" />
+      {/* The café's real logo */}
+      <span className="relative block size-[34px] -translate-x-[8px]">
+        <Image src="/images/projects/playlist-cafe-logo.png" alt="" fill sizes="36px" className="object-contain" />
+      </span>
+      <WebsiteBadge className="bg-[#f7ebe0] text-[#4a2c1c] ring-[#2a1c13]" />
     </Frame>
   ),
 };
+
+/** Corner badge that marks a thumbnail as a business website */
+function WebsiteBadge({ className }: { className: string }) {
+  return (
+    <span className={cn("absolute bottom-[5px] right-[6px] grid size-[17px] place-items-center rounded-full ring-2", className)}>
+      <GlobeSimpleIcon weight="bold" className="size-[10px]" />
+    </span>
+  );
+}
 
 export function ProjectThumb({ project, icon }: { project: Project; icon: Icon }) {
   const Thumb = projectThumbs[project.slug];
