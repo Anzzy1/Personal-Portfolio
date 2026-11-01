@@ -87,6 +87,11 @@ const projectThumbs: Record<string, () => React.ReactNode> = {
       <Image src="/images/projects/kape-luna-thumb.jpg" alt="" fill sizes="72px" className="object-cover" />
     </Frame>
   ),
+  "playlist-cafe": () => (
+    <Frame className="bg-[#2a1c13]">
+      <Image src="/images/projects/playlist-cafe-thumb.jpg" alt="" fill sizes="72px" className="object-cover" />
+    </Frame>
+  ),
 };
 
 export function ProjectThumb({ project, icon }: { project: Project; icon: Icon }) {

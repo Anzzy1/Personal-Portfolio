@@ -217,6 +217,48 @@ export const projects: Project[] = [
     demo: "",
     github: "",
   },
+  {
+    slug: "playlist-cafe",
+    color: "#7a5236",
+    title: "Playlist Cafe",
+    summary:
+      "A landing page for Playlist Cafe, the overlooking glass cafe in Antipolo — skyline views, the full menu in one tap, live acoustic nights, and directions and reservations right from the first screen.",
+    category: ["Landing Page"],
+    featured: false,
+    year: "2026",
+    type: "Landing page · Café in Antipolo, Rizal",
+    role: "Design & development",
+    timeline: "Personal build",
+    problem:
+      "Playlist Cafe's best selling point is the view: the whole Metro Manila skyline from the hills of Antipolo. But online it lived on Facebook and Instagram posts, so new guests couldn't easily find the full menu and prices, the opening hours, or how to get to Grand Heights.",
+    solution:
+      "A one-page site that sells the place before any copy: the terrace at sunset up front, with \"Good coffee, good music & the best view in Antipolo.\" A live open/closed badge, one-tap directions and reservations, a music-themed \"Now Playing\" spotlight for the new Ube Series, the full in-store menu transcribed into a searchable sheet, and an experience section for golden hour, acoustic nights, and proposals.",
+    metrics: [
+      { value: "60+", label: "Menu items online" },
+      { value: "Live", label: "Open / closed badge" },
+      { value: "Mobile", label: "First design" },
+    ],
+    stack: ["Astro", "TypeScript", "Tailwind CSS", "GSAP", "Lenis"],
+    architecture: [
+      "Static Astro site — ships almost no JavaScript, so it loads fast on mobile data up the hill",
+      "Contact info, the full menu, highlights, and gallery live in one typed data file",
+      "Photos are converted to responsive WebP at build time",
+      "\"Open now\" status computed from the café's hours, shown in the nav and hero",
+      "Full menu opens in a bottom sheet with categories, sizes, and prices; gallery opens in a lightbox",
+      "GSAP drives scroll reveals and the spinning vinyl, with Lenis smooth scrolling on desktop only",
+    ],
+    decisions: [
+      "On phones the photo comes before the headline, because the view is what brings people in",
+      "A playlist theme throughout — \"Now Playing\", \"Top Hits\", \"Appetizer Radio\" — matching the café's own menu names",
+      "Directions, reservations, and hours pinned in the first screen, since those are what guests message the page about",
+    ],
+    challenges: [
+      "Transcribing four in-store menu boards — hot/iced sizes, sharing plates, wing flavors and dips — into one clean, readable menu",
+      "Keeping heavy scroll motion smooth on mid-range phones",
+    ],
+    demo: "",
+    github: "https://github.com/Anzzy1/Playlist-Cafe",
+  },
 ];
 
 export const featuredProjects = projects.filter((p) => p.featured);
