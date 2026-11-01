@@ -138,7 +138,6 @@ export const projects: Project[] = [
   },
   {
     slug: "portfolio-ai-assistant",
-    cover: "/images/projects/anzyy-ai-cover.jpg",
     color: "#f2541b",
     title: "Anzyy AI",
     summary:
