@@ -40,7 +40,7 @@ export const profile = {
     { label: "GitHub", href: "https://github.com/Anzzy1", handle: "Anzzy1" },
     {
       label: "LinkedIn",
-      href: "https://www.linkedin.com/in/mohamad-anzar-pangcoga-492585381",
+      href: "https://www.linkedin.com/in/anzyydev1",
       handle: "Mohamad Anzar Pangcoga",
     },
     { label: "Facebook", href: "https://www.facebook.com/Anzyydev1", handle: "Anzyydev1" },
@@ -77,7 +77,7 @@ export const profile = {
 
 
 // Public URL used for SEO, the sitemap, and social previews.
-// Set NEXT_PUBLIC_SITE_URL (e.g. "https://anzyy.dev") once you own a domain.
+// Set NEXT_PUBLIC_SITE_URL (e.g. "https://anzyydev.com") once you own a domain.
 // Until then, Vercel builds fall back to the project's production URL.
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
