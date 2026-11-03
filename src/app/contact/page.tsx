@@ -11,6 +11,7 @@ import { LocalTime } from "@/components/layout/local-time";
 export const metadata: Metadata = {
   title: "Contact",
   description: `Send a message to ${profile.name}.`,
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

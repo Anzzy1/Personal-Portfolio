@@ -17,7 +17,12 @@ export async function generateMetadata(props: PageProps<"/work/[slug]">): Promis
   const { slug } = await props.params;
   const project = getProject(slug);
   if (!project) return {};
-  return { title: project.title, description: project.summary };
+  return {
+    title: project.title,
+    description: project.summary,
+    alternates: { canonical: `/work/${slug}` },
+    openGraph: { title: project.title, description: project.summary, url: `/work/${slug}` },
+  };
 }
 
 // The shared shell (back link + skeleton) renders instantly; the

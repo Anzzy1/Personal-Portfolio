@@ -9,6 +9,7 @@ import { ClaimForm } from "@/components/offer/claim-form";
 export const metadata: Metadata = {
   title: "Claim your founding spot",
   description: `A big discount for my first ${offer.total} clients — websites, web systems, AI integrations, and apps.`,
+  alternates: { canonical: "/claim" },
 };
 
 const steps = [

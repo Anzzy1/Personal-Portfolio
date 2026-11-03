@@ -11,6 +11,7 @@ import { ExperienceTimeline } from "@/components/home/timeline";
 export const metadata: Metadata = {
   title: "About",
   description: `About ${profile.name}, ${profile.title}.`,
+  alternates: { canonical: "/about" },
 };
 
 const interestIcons = [CubeIcon, CrownSimpleIcon, BrainIcon];

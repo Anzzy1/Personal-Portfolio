@@ -7,6 +7,7 @@ import { CertificationList } from "@/components/certifications/certification-lis
 export const metadata: Metadata = {
   title: "Certifications",
   description: `Certifications, awards, and courses completed by ${profile.name}.`,
+  alternates: { canonical: "/certifications" },
 };
 
 export default function CertificationsPage() {

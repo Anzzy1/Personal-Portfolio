@@ -6,6 +6,7 @@ import { Tetris } from "@/components/play/tetris";
 export const metadata: Metadata = {
   title: "Play",
   description: "Take a break and play a round of Tetris.",
+  alternates: { canonical: "/play" },
 };
 
 export default function PlayPage() {

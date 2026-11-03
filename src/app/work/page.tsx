@@ -14,6 +14,7 @@ const stats = [
 export const metadata: Metadata = {
   title: "Work",
   description: "Websites, web systems, and AI integrations I've designed and built.",
+  alternates: { canonical: "/work" },
 };
 
 export default function WorkPage() {

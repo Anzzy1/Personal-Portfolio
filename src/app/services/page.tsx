@@ -16,6 +16,7 @@ import { FoundingOffer } from "@/components/offer/founding-offer";
 export const metadata: Metadata = {
   title: "Services",
   description: "Websites, web systems, AI chatbots, and apps for businesses — quoted around your project.",
+  alternates: { canonical: "/services" },
 };
 
 // Each service gets its own color; everything accent-colored inside follows it
