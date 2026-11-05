@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { AnimatePresence, motion } from "motion/react";
+import { usePathname } from "next/navigation";
+import { motion } from "motion/react";
 import { ListIcon, PaperPlaneTiltIcon } from "@phosphor-icons/react/dist/ssr";
 import { SidebarPanel, Wordmark } from "./sidebar";
 import { ThemeToggle } from "./theme-toggle";
+import { cn } from "@/lib/utils";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -16,6 +18,14 @@ const ease = [0.22, 1, 0.36, 1] as const;
 export function AppShell({ children }: { children: React.ReactNode }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const closeDrawer = () => setDrawerOpen(false);
+
+  // Any navigation (links, back/forward) closes the drawer
+  const pathname = usePathname();
+  const [lastPath, setLastPath] = useState(pathname);
+  if (pathname !== lastPath) {
+    setLastPath(pathname);
+    setDrawerOpen(false);
+  }
 
   // Escape closes the drawer; lock page scroll while it's open
   useEffect(() => {
@@ -38,30 +48,32 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </aside>
       </div>
 
-      {/* Mobile drawer */}
-      <AnimatePresence>
-        {drawerOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              onClick={closeDrawer}
-              className="fixed inset-0 z-40 bg-black/25 backdrop-blur-[2px] lg:hidden"
-            />
-            <motion.aside
-              initial={{ x: "-110%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "-110%" }}
-              transition={{ duration: 0.32, ease }}
-              className="sb-shell fixed left-2.5 top-2.5 z-50 h-[calc(100dvh-20px)] w-[296px] max-w-[calc(100vw-20px)] lg:hidden"
-            >
-              <SidebarPanel mobile onClose={closeDrawer} onNavigate={closeDrawer} pillId="drawer-pill" />
-            </motion.aside>
-          </>
+      {/* Mobile drawer. Always mounted: being closed is a class, not an exit animation,
+          so a stalled animation can never leave an invisible backdrop blocking taps. */}
+      <motion.div
+        aria-hidden
+        initial={false}
+        animate={{ opacity: drawerOpen ? 1 : 0 }}
+        transition={{ duration: 0.2 }}
+        onClick={closeDrawer}
+        className={cn(
+          "fixed inset-0 z-40 bg-black/25 lg:hidden",
+          drawerOpen ? "backdrop-blur-[2px]" : "pointer-events-none",
         )}
-      </AnimatePresence>
+      />
+      <motion.aside
+        initial={false}
+        animate={{ x: drawerOpen ? 0 : "-110%" }}
+        transition={{ duration: 0.32, ease }}
+        inert={!drawerOpen}
+        aria-hidden={!drawerOpen}
+        className={cn(
+          "sb-shell fixed left-2.5 top-2.5 z-50 h-[calc(100dvh-20px)] w-[296px] max-w-[calc(100vw-20px)] lg:hidden",
+          !drawerOpen && "pointer-events-none",
+        )}
+      >
+        <SidebarPanel mobile onClose={closeDrawer} onNavigate={closeDrawer} pillId="drawer-pill" />
+      </motion.aside>
 
       <div className="min-w-0 flex-1">
         <header className="sticky top-0 z-30 flex items-center justify-between border-b border-border/70 bg-bg/80 px-4 py-2.5 backdrop-blur-md lg:hidden">
