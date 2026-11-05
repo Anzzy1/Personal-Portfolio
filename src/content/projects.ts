@@ -220,6 +220,49 @@ export const projects: Project[] = [
     github: "",
   },
   {
+    slug: "pro-fitness-gym",
+    color: "#e10600",
+    title: "Pro Fitness Gym",
+    summary:
+      "A bold, red-and-black website for Pro Fitness Gym in Antipolo City — memberships with coach sessions, a live class schedule, the full coaching team, and inquiries sent straight to the gym's inbox.",
+    category: ["Landing Page"],
+    featured: false,
+    year: "2026",
+    type: "Business website · Gym in Antipolo City",
+    role: "Design & development",
+    timeline: "Personal build",
+    problem:
+      "Pro Fitness Gym beside SM Cherry Antipolo had the equipment, the coaches, and a busy class schedule — but all of it lived on photos of posters and schedule boards. People had to message the page to ask about rates, class times, opening hours, and promos, and many never followed up.",
+    solution:
+      "A one-page site that feels like walking onto the gym floor: \"Train like a PRO.\" over the gym's own building, then membership plans with coach sessions included, a GX class schedule you can filter by day and type, the head coach and the coaching team, a photo gallery, and a visit section with hours, directions, and a map. Every \"Join Now\" leads to an inquiry form that emails the gym directly.",
+    metrics: [
+      { value: "Auto", label: "Promo pricing" },
+      { value: "Live", label: "Class schedule" },
+      { value: "Direct", label: "Inquiries by email" },
+    ],
+    stack: ["Next.js", "React", "TypeScript", "CSS", "FormSubmit"],
+    architecture: [
+      "Promo dates, prices, hours, classes, coaches, gallery, and contact info all live in one typed data file",
+      "The 50% promo turns on and off by itself between its start and end dates (Philippine time), switching prices and buttons",
+      "Class schedule with day tabs and a dance / strength filter, opening on today's classes",
+      "Opening hours highlight today, computed in Philippine time no matter where the visitor is",
+      "Gallery loops two rows of photos in opposite directions, then turns into a swipeable strip when you pick a category",
+      "Inquiry form checks names, plans, and PH mobile numbers, then emails the gym through FormSubmit — no server to maintain",
+    ],
+    decisions: [
+      "The gym's own red-and-black branding and building photo up front, so the site feels like the place, not a template",
+      "Coach sessions shown inside every membership plan, because coaching is what sets the gym apart",
+      "\"Choose plan\" buttons prefill the inquiry form, so a visitor goes from interested to inquiry in two taps",
+      "Built so the owner can run the next promo just by changing two dates",
+    ],
+    challenges: [
+      "Transcribing the gym's posters, price lists, and schedule board into clean, accurate content",
+      "Keeping a photo-heavy, animated page fast on mobile data, with reduced motion respected",
+    ],
+    demo: "https://pro-fitness-gym-antipolo.vercel.app/",
+    github: "https://github.com/Anzzy1/pro-fitness-gym",
+  },
+  {
     slug: "playlist-cafe",
     cover: "/images/projects/playlist-cafe-cover.jpg",
     color: "#7a5236",

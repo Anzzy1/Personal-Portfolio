@@ -12,7 +12,7 @@ const stats = [
 ];
 
 export const metadata: Metadata = {
-  title: "Work",
+  title: "My Work — Projects & Case Studies",
   description: "Websites, web systems, and AI integrations I've designed and built.",
   alternates: { canonical: "/work" },
 };

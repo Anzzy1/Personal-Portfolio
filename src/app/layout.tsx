@@ -31,14 +31,15 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const defaultTitle = `${profile.name} (${profile.alias}) — ${profile.title}`;
-const description = `${profile.name} (${profile.alias}) is a freelance full-stack & AI developer from the Philippines. ${profile.tagline}`;
+// Name first (what people search), then what the site is — "Portfolio" tells searchers what they'll get
+const defaultTitle = `${profile.name} | ${profile.title} Portfolio`;
+const description = `Portfolio of ${profile.name} (${profile.alias}), a freelance full-stack & AI developer from the Philippines. See websites, web systems, AI chatbots, and apps I've built — and hire me for yours.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: defaultTitle,
-    template: `%s · ${profile.name} (${profile.alias})`,
+    template: `%s | ${profile.name}`,
   },
   description,
   applicationName: profile.alias,
@@ -92,7 +93,18 @@ const jsonLd = {
       email: `mailto:${profile.email}`,
       address: { "@type": "PostalAddress", addressCountry: "PH" },
       sameAs: profile.socials.map((s) => s.href).filter(Boolean),
+      worksFor: { "@id": `${siteUrl}/#brand` },
       knowsAbout: ["Web development", "Full-stack development", "AI integrations", "Chatbots", "Next.js", "React"],
+    },
+    {
+      // Brand entity with a logo — gives Google an explicit logo image for the site
+      "@type": "Organization",
+      "@id": `${siteUrl}/#brand`,
+      name: profile.alias,
+      url: siteUrl,
+      logo: `${siteUrl}/icon-512.png`,
+      founder: { "@id": `${siteUrl}/#person` },
+      sameAs: profile.socials.map((s) => s.href).filter(Boolean),
     },
     {
       "@type": "WebSite",

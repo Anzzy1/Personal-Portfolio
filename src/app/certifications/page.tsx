@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/ui/primitives";
 import { CertificationList } from "@/components/certifications/certification-list";
 
 export const metadata: Metadata = {
-  title: "Certifications",
+  title: "Certifications & Awards",
   description: `Certifications, awards, and courses completed by ${profile.name}.`,
   alternates: { canonical: "/certifications" },
 };

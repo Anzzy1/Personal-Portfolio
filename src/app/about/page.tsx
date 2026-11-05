@@ -9,8 +9,8 @@ import { Certifications, StackGrid } from "@/components/home/sections";
 import { ExperienceTimeline } from "@/components/home/timeline";
 
 export const metadata: Metadata = {
-  title: "About",
-  description: `About ${profile.name}, ${profile.title}.`,
+  title: "About Me — Developer, Builder & Problem Solver",
+  description: `Get to know ${profile.name} (${profile.alias}) — a freelance full-stack & AI developer from the Philippines who loves inventing things, logic puzzles, and building software that helps businesses.`,
   alternates: { canonical: "/about" },
 };
 

@@ -14,7 +14,7 @@ import { ProcessSteps, serviceIcons } from "@/components/home/sections";
 import { FoundingOffer } from "@/components/offer/founding-offer";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Services — Websites, Web Systems, AI Chatbots & Apps",
   description: "Websites, web systems, AI chatbots, and apps for businesses — quoted around your project.",
   alternates: { canonical: "/services" },
 };

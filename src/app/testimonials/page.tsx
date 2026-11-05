@@ -7,7 +7,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { TestimonialCard } from "@/components/testimonials/testimonial-card";
 
 export const metadata: Metadata = {
-  title: "Testimonials",
+  title: "Testimonials — What Clients Say",
   description: `What clients, teammates, and collaborators say about working with ${profile.name}.`,
   alternates: { canonical: "/testimonials" },
 };

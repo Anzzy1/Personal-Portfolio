@@ -2,6 +2,8 @@ import { ViewTransition } from "react";
 import Image from "next/image";
 import type { Project } from "@/content/projects";
 import {
+  BarbellIcon,
+  CalendarCheckIcon,
   ChartLineUpIcon,
   ChatCircleDotsIcon,
   CoffeeIcon,
@@ -16,6 +18,7 @@ import {
   ShoppingBagIcon,
   SparkleIcon,
   TranslateIcon,
+  UsersThreeIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import { AiMark } from "@/components/ai/ai-mark";
 import { cn } from "@/lib/utils";
@@ -35,6 +38,7 @@ const customPreviews: Record<string, () => React.ReactNode> = {
   tindahub: TindaHubPreview,
   "kape-luna": KapeLunaPreview,
   "playlist-cafe": PlaylistCafePreview,
+  "pro-fitness-gym": ProFitnessGymPreview,
   "portfolio-ai-assistant": AnzyyAiPreview,
 };
 
@@ -458,6 +462,62 @@ function AnzyyAiPreview() {
             fill
             sizes="(min-width: 1024px) 320px, 50vw"
             className="object-cover object-top"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** Pro Fitness Gym: the real hero in a browser window, over the red-lit training floor */
+function ProFitnessGymPreview() {
+  const features = [
+    { icon: BarbellIcon, label: "Memberships" },
+    { icon: CalendarCheckIcon, label: "Class schedule" },
+    { icon: UsersThreeIcon, label: "Coaches" },
+  ];
+  return (
+    <div className="@container absolute inset-0 isolate overflow-hidden bg-[#0b0b0c]">
+      {/* Ambient backdrop: the training floor under red lights, blurred and dimmed */}
+      <Image
+        src="/images/projects/pro-fitness-gym-ambient.jpg"
+        alt=""
+        fill
+        sizes="320px"
+        className="-z-20 scale-110 object-cover opacity-70"
+      />
+      <span className="absolute inset-0 -z-10 bg-[radial-gradient(90%_70%_at_50%_100%,rgb(225_6_0/0.38),transparent_70%)]" />
+      <span className="absolute inset-0 -z-10 bg-[radial-gradient(rgb(255_255_255/0.08)_1px,transparent_1px)] [background-size:14px_14px] [mask-image:linear-gradient(black,transparent_60%)]" />
+
+      <div className="absolute inset-x-0 top-[5.5%] flex justify-center gap-[1.6cqw] px-[4%] @max-sm:hidden">
+        {features.map(({ icon: Icon, label }) => (
+          <span
+            key={label}
+            className="inline-flex items-center gap-[0.8cqw] whitespace-nowrap rounded-full bg-black/45 px-[1.8cqw] py-[0.8cqw] text-[clamp(8px,1.7cqw,13px)] font-semibold text-white ring-1 ring-[#ff3b30]/45 backdrop-blur-sm"
+          >
+            <Icon weight="fill" className="size-[1.25em] text-[#ff3b30]" />
+            {label}
+          </span>
+        ))}
+      </div>
+
+      {/* The website, in a browser window that runs off the bottom edge */}
+      <div className="absolute inset-x-[7%] bottom-[-4%] top-[19%] overflow-hidden rounded-t-[1.6cqw] bg-black shadow-[0_30px_70px_-16px_rgb(0_0_0/0.8),0_0_60px_-10px_rgb(225_6_0/0.45)] ring-1 ring-white/15 @max-sm:top-[10%]">
+        <div className="flex h-[6.5%] min-h-[10px] items-center gap-[0.7cqw] border-b border-white/10 bg-[#1a1a1c] px-[1.6cqw]">
+          <span className="size-[1cqw] min-h-1 min-w-1 rounded-full bg-[#ff5f57]" />
+          <span className="size-[1cqw] min-h-1 min-w-1 rounded-full bg-[#febc2e]" />
+          <span className="size-[1cqw] min-h-1 min-w-1 rounded-full bg-[#28c840]" />
+          <span className="ml-[2cqw] rounded-full bg-white/10 px-[1.6cqw] py-[0.3cqw] font-mono text-[clamp(4px,1.1cqw,10px)] text-white/60">
+            pro-fitness-gym-antipolo.vercel.app
+          </span>
+        </div>
+        <div className="relative h-[93.5%]">
+          <Image
+            src="/images/projects/pro-fitness-gym.jpg"
+            alt="Pro Fitness Gym website: the headline &quot;Train like a PRO.&quot; over the gym's building in Antipolo"
+            fill
+            sizes="(min-width: 1024px) 640px, 100vw"
+            className="object-cover object-left-top"
           />
         </div>
       </div>

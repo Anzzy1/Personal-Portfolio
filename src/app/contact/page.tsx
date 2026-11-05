@@ -9,8 +9,8 @@ import { ContactAiCard } from "@/components/contact/ai-card";
 import { LocalTime } from "@/components/layout/local-time";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: `Send a message to ${profile.name}.`,
+  title: "Contact — Hire Me for Your Project",
+  description: `Have a project in mind? Send ${profile.name} a message about your website, web system, AI chatbot, or app — replies within 24 hours.`,
   alternates: { canonical: "/contact" },
 };
 

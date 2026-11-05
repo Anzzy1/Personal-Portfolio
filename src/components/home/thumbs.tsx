@@ -113,6 +113,16 @@ const projectThumbs: Record<string, () => React.ReactNode> = {
       <WebsiteBadge className="bg-[#f7ebe0] text-[#4a2c1c] ring-[#2a1c13]" />
     </Frame>
   ),
+  "pro-fitness-gym": () => (
+    <Frame className="bg-[linear-gradient(160deg,#2a0a09,#0b0b0c)]">
+      <Glow className="-right-3 -top-5 bg-[#e10600]" />
+      {/* The gym's real logo */}
+      <span className="relative block h-[26px] w-[46px] -translate-x-[8px] overflow-hidden rounded-[4px]">
+        <Image src="/images/projects/pro-fitness-gym-logo.jpg" alt="" fill sizes="48px" className="object-cover" />
+      </span>
+      <WebsiteBadge className="bg-[#e10600] text-white ring-[#160606]" />
+    </Frame>
+  ),
 };
 
 /** Corner badge that marks a thumbnail as a business website */
