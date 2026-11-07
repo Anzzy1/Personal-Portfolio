@@ -20,12 +20,12 @@ export function FoundingOffer({
     <section
       aria-label="Founding client offer"
       className={cn(
-        "relative isolate overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#ff8a4c_0%,#f2541b_45%,#c2280f_100%)] text-white shadow-[0_30px_60px_-30px_rgb(242_84_27/0.8)] ring-1 ring-black/5",
+        "relative isolate overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#ff8a4c_0%,#f2541b_45%,#c2280f_100%)] text-white shadow-[0_24px_48px_-30px_rgb(242_84_27/0.45)] ring-1 ring-black/5 dark:bg-[linear-gradient(135deg,#c95a2a_0%,#b23f12_45%,#8a2309_100%)] dark:shadow-[0_20px_40px_-28px_rgb(0_0_0/0.7)] dark:ring-white/5",
         className,
       )}
     >
       {/* Light blobs, diagonal stripes, and an outsized % watermark */}
-      <span className="mesh-a absolute -right-[15%] -top-[50%] -z-10 size-[70%] rounded-full bg-[radial-gradient(circle,#ffd29a,transparent_62%)] opacity-60 blur-2xl" />
+      <span className="mesh-a absolute -right-[15%] -top-[50%] -z-10 size-[70%] rounded-full bg-[radial-gradient(circle,#ffd29a,transparent_62%)] opacity-40 blur-2xl dark:opacity-15" />
       <span className="absolute inset-0 -z-10 bg-[repeating-linear-gradient(135deg,rgb(255_255_255/0.07)_0_2px,transparent_2px_14px)] [mask-image:linear-gradient(90deg,transparent,black_60%)]" />
       <span
         aria-hidden
@@ -91,7 +91,7 @@ export function FoundingOffer({
                   key={i}
                   className={cn(
                     "h-2.5 rounded-full",
-                    i < offer.claimed ? "bg-[#3b0d03]/45" : "bg-white shadow-[0_0_10px_rgb(255_255_255/0.6)]",
+                    i < offer.claimed ? "bg-[#3b0d03]/45" : "bg-white/90 dark:bg-white/75",
                   )}
                 />
               ))}
@@ -103,7 +103,7 @@ export function FoundingOffer({
 
           <Link
             href={cta.href}
-            className="group inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white px-5 text-sm font-bold text-[#c2280f] shadow-[0_10px_24px_-10px_rgb(60_10_0/0.6)] transition-transform duration-200 hover:-translate-y-px"
+            className="group inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white px-5 text-sm font-bold text-[#c2280f] shadow-[0_8px_18px_-10px_rgb(60_10_0/0.45)] dark:bg-[#f3ebe6] dark:text-[#a8300c] transition-transform duration-200 hover:-translate-y-px"
           >
             {cta.label}
             <ArrowRightIcon weight="bold" className="size-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -122,7 +122,7 @@ export function SidebarOffer({ onNavigate }: { onNavigate?: () => void }) {
     <Link
       href="/claim"
       onClick={onNavigate}
-      className="group relative isolate block shrink-0 overflow-hidden rounded-2xl bg-[linear-gradient(135deg,#ff8a4c_0%,#f2541b_50%,#c2280f_100%)] p-3.5 text-white shadow-[0_14px_30px_-16px_rgb(242_84_27/0.9)] transition-transform duration-200 hover:-translate-y-0.5"
+      className="group relative isolate block shrink-0 overflow-hidden rounded-2xl bg-[linear-gradient(135deg,#ff8a4c_0%,#f2541b_50%,#c2280f_100%)] p-3.5 text-white shadow-[0_10px_22px_-16px_rgb(242_84_27/0.5)] dark:bg-[linear-gradient(135deg,#c95a2a_0%,#b23f12_50%,#8a2309_100%)] dark:shadow-[0_10px_22px_-16px_rgb(0_0_0/0.7)] transition-transform duration-200 hover:-translate-y-0.5"
     >
       <span className="absolute inset-0 -z-10 bg-[repeating-linear-gradient(135deg,rgb(255_255_255/0.07)_0_2px,transparent_2px_12px)]" />
       <span className="flex items-center justify-between gap-2">
@@ -139,7 +139,7 @@ export function SidebarOffer({ onNavigate }: { onNavigate?: () => void }) {
       </span>
       <span className="mt-2.5 grid grid-cols-10 gap-[3px]" aria-hidden>
         {Array.from({ length: offer.total }, (_, i) => (
-          <span key={i} className={cn("h-1.5 rounded-full", i < offer.claimed ? "bg-[#3b0d03]/45" : "bg-white")} />
+          <span key={i} className={cn("h-1.5 rounded-full", i < offer.claimed ? "bg-[#3b0d03]/45" : "bg-white/90 dark:bg-white/75")} />
         ))}
       </span>
       <span className="mt-2 flex items-center justify-between text-xs font-semibold">
