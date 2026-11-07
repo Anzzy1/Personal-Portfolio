@@ -1,3 +1,5 @@
+import { projects } from "./projects";
+
 // ------------------------------------------------------------------
 // Your personal info. Everything on the site reads from here.
 // ------------------------------------------------------------------
@@ -53,7 +55,7 @@ export const profile = {
   // TODO: update as you grow
   stats: [
     { value: `${copyrightYear - buildingSince}+ yrs`, label: "Building", href: "/about" },
-    { value: "4", label: "Projects built", href: "/work" },
+    { value: String(projects.length), label: "Projects built", href: "/work" },
     { value: "4", label: "Core services", href: "/services" },
     { value: "<24h", label: "Reply time", href: "/contact" },
   ],
