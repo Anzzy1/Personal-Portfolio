@@ -1,5 +1,5 @@
 // ------------------------------------------------------------------
-// Experience and stack (certifications and testimonials have their own files)
+// Experience and stack (certifications and blog posts have their own files)
 // TODO: confirm dates and replace the template items.
 // ------------------------------------------------------------------
 

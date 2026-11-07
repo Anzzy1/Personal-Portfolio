@@ -6,9 +6,9 @@ import { motion } from "motion/react";
 import {
   BriefcaseIcon,
   CertificateIcon,
-  ChatTeardropTextIcon,
   GameControllerIcon,
   HouseIcon,
+  NotePencilIcon,
   SquaresFourIcon,
   UserIcon,
 } from "@phosphor-icons/react/dist/ssr";
@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
 import { projects } from "@/content/projects";
 import { services } from "@/content/services";
 import { certifications } from "@/content/certifications";
-import { testimonials } from "@/content/testimonials";
+import { posts } from "@/content/blog";
 
 type NavItem = { href: string; label: string; icon: Icon; count?: number };
 
@@ -35,10 +35,10 @@ const groups: { label?: string; items: NavItem[] }[] = [
         count: certifications.length,
       },
       {
-        href: "/testimonials",
-        label: "Testimonials",
-        icon: ChatTeardropTextIcon,
-        count: testimonials.length || undefined,
+        href: "/blog",
+        label: "Blog",
+        icon: NotePencilIcon,
+        count: posts.length || undefined,
       },
     ],
   },

@@ -49,7 +49,7 @@ function linksFor(answer: string) {
   if (/\bcertificat|\baward\b|\bfreecodecamp\b/.test(text)) {
     links.push({ label: "Certifications", href: "/certifications" });
   }
-  if (/\btestimonials?\b|\breviews?\b/.test(text)) links.push({ label: "Testimonials", href: "/testimonials" });
+  if (/\bblog\b|\bposts?\b|\barticles?\b/.test(text)) links.push({ label: "Blog", href: "/blog" });
 
   const seen = new Set<string>();
   return links.filter((l) => (seen.has(l.href) ? false : (seen.add(l.href), true))).slice(0, 3);
