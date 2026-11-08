@@ -80,45 +80,61 @@ export const posts: BlogPost[] = [
     slug: "how-i-started-vibe-coding-with-ai",
     title: "How I started vibe coding with AI",
     excerpt:
-      "From typing every line by hand to building with AI as a partner — and why knowing the fundamentals still matters.",
+      "From copy-pasting ChatGPT answers that never quite worked, to free coding agents, to Claude Code — how AI went from useless to my everyday building partner.",
     date: "2026-11-09",
     tags: ["Story", "AI"],
     body: [
       {
         paragraphs: [
-          "For years, I wrote every line of code by hand. Then AI coding tools showed up, and the way I build changed completely. People call it vibe coding — describing what you want and letting AI help write it. Here's how I got into it.",
+          "Today, AI is part of almost everything I build. But it didn't start that way. At first, I actually stopped using it — because it just couldn't do what I needed.",
         ],
       },
       {
-        heading: "Skeptical at first",
+        heading: "When AI was just a chatbot",
         paragraphs: [
-          "When I first tried AI for coding, I didn't trust it. It gave me code that looked right but didn't work, or used things that didn't exist. I thought it was just a toy.",
-          "But I kept testing it on small tasks — fixing a bug, explaining an error, writing a function I didn't feel like typing. Slowly, I noticed I was finishing things a lot faster.",
+          "Back in 2023 to 2024, AI to me was just a chatbot. I'd open ChatGPT, describe what I wanted, and ask it to give me the code. Then I'd copy it, paste it into my project, and hope it worked.",
+          "Most of the time, it didn't. AI wasn't that good at coding back then. The code looked right but broke when I ran it, missed parts of what I asked for, or didn't fit the rest of my project. I spent more time fixing its answers than I would have spent writing the code myself.",
+          "So I made a decision: no more AI when building projects. If I couldn't get what I wanted from it, I'd just do it myself.",
         ],
       },
       {
-        heading: "Learning to talk to AI",
+        heading: "Then coding agents appeared",
         paragraphs: [
-          "The big shift was realizing that AI is only as good as the instructions you give it. Vague prompts gave me messy code. Clear prompts — with context, the goal, and the rules to follow — gave me code I could actually ship.",
-          "It felt like learning a new programming language, except the language was plain English.",
+          "Things changed when coding agents came out. These weren't chatbots anymore — they could read your project, edit your files, and run commands on their own. It sounded exactly like what I needed.",
+          "The problem? Almost all of them needed a paid AI subscription. As a student, I couldn't afford one. So I could only watch other people use them.",
         ],
       },
       {
-        heading: "Why fundamentals still matter",
+        heading: "Discovering OpenCode",
         paragraphs: [
-          "Vibe coding works best when you understand what the AI is writing. All those hours struggling with JavaScript logic paid off here: I can read what it gives me, spot when it's wrong, and steer it back on track.",
+          "Then I found OpenCode — a coding agent that could run on free models. For the first time, I had an AI that could actually work inside my project: reading my code, changing my files, and helping me build.",
+          "Honestly, it wasn't that good. The free models made mistakes, got confused on bigger tasks, and I still had to fix a lot. But that was okay. At least I had an AI helping me make my projects better, and I learned a lot about how to work with one.",
+        ],
+      },
+      {
+        heading: "Finally: Claude Code",
+        paragraphs: [
+          "When I could finally afford it, I bought a Claude Code subscription. And wow — it was on a completely different level.",
+          "It understood my whole project, planned changes across many files, fixed its own errors, and actually built what I described. Things that used to take me days now took an afternoon. I remember just watching it work and thinking: how is it doing all of this?",
+        ],
+      },
+      {
+        heading: "What vibe coding taught me",
+        paragraphs: [
+          "Vibe coding — describing what you want and letting AI build it — sounds easy, but it works best when you know what you're doing. All those years struggling with JavaScript logic paid off: I can read what the AI writes, spot when it's wrong, and steer it back on track.",
         ],
         list: [
-          "I let AI handle the repetitive parts, so I can focus on the hard decisions",
-          "I always review and test what it writes before it goes live",
-          "I never let AI decide anything that has to be exact — like money or totals",
+          "Clear instructions get clear results — vague prompts get messy code",
+          "I let AI handle the repetitive work, so I can focus on the hard decisions",
+          "I always review and test what it builds before it goes live",
+          "I never let AI decide anything that has to be exact, like money or totals",
         ],
       },
       {
         heading: "From using AI to building with it",
         paragraphs: [
-          "Once I got comfortable, I didn't just use AI to code — I started putting AI inside the things I build. Chatbots that answer from real business data, apps that understand Taglish, and the assistant on this very site (press Ctrl K to try it).",
-          "Today, AI is part of how I work every day. It doesn't replace the builder — it lets one person build like a small team.",
+          "Once AI became part of how I code, I started putting it inside the things I build too — chatbots that answer from real business data, apps that understand Taglish, and the assistant on this very site (press Ctrl K to try it).",
+          "From copy-pasting broken ChatGPT answers to building full systems with a coding agent — it's been a wild ride. AI doesn't replace the builder. It lets one person build like a whole team.",
         ],
       },
     ],
