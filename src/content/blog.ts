@@ -26,9 +26,9 @@ export type BlogPost = {
 export const posts: BlogPost[] = [
   {
     slug: "how-i-started-coding",
-    title: "How a ₱200,000 client got a 9-year-old into coding",
+    title: "How I started coding",
     excerpt:
-      "I didn't care about code at first — until I saw what one system was worth. This is how my journey started, on a very old PC.",
+      "From watching my cousin code at 9 years old to writing my first line of HTML on a very old PC — this is how my journey began.",
     date: "2026-11-09",
     tags: ["Story", "Journey"],
     body: [
