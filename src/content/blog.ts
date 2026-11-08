@@ -78,7 +78,7 @@ export const posts: BlogPost[] = [
   },
   {
     slug: "how-i-started-vibe-coding-with-ai",
-    title: "I quit using AI for coding — then everything changed",
+    title: "The day AI actually started building with me",
     excerpt:
       "From copy-pasting ChatGPT answers that never quite worked, to free coding agents, to Claude Code — how AI went from useless to my everyday building partner.",
     date: "2026-11-09",
