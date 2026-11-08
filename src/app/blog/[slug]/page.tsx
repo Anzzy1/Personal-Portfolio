@@ -111,11 +111,6 @@ async function PostContent({ params }: { params: Promise<{ slug: string }> }) {
                   ))}
                 </ul>
               )}
-              {section.image && (
-                <div className="pt-2">
-                  <BlogFigure image={section.image} />
-                </div>
-              )}
             </section>
           </Reveal>
         ))}

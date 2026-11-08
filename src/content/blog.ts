@@ -6,35 +6,16 @@
 // sitemap, and AI assistant all read from this list.
 // ------------------------------------------------------------------
 
-// Built-in drawings in src/components/blog/illustrations.tsx
-export type IllustrationName =
-  | "old-pc"
-  | "first-website"
-  | "js-logic"
-  | "ai-timeline"
-  | "chat-copy-paste"
-  | "free-agent"
-  | "agent-building"
-  | "games-to-code"
-  | "quiz-toy"
-  | "chessboard"
-  | "rubiks-cube";
-
-// Use `illustration` for a built-in drawing, or `src` for a real photo
-// under /public (e.g. "/images/blog/my-old-pc.jpg") — `src` wins if both are set.
+// A post's cover: an image under /public (1200×676 works best)
 export type BlogImage = {
-  illustration?: IllustrationName;
-  src?: string;
+  src: string;
   alt: string;
-  caption?: string;
 };
 
 export type BlogSection = {
   heading?: string;
   paragraphs: string[];
   list?: string[];
-  // Shown after the section's text
-  image?: BlogImage;
 };
 
 export type BlogPost = {
@@ -58,7 +39,7 @@ export const posts: BlogPost[] = [
       "From watching my cousin code at 9 years old to writing my first line of HTML on a very old PC — this is how my journey began.",
     date: "2026-11-09",
     tags: ["Story", "Journey"],
-    cover: { illustration: "old-pc", alt: "A very old desktop computer showing my first HTML code" },
+    cover: { src: "/images/blog/old-pc.png", alt: "Stippled drawing of an old desktop computer with code on the screen" },
     body: [
       {
         paragraphs: [
@@ -80,14 +61,12 @@ export const posts: BlogPost[] = [
       },
       {
         heading: "HTML, CSS, and my first portfolio",
-        image: { illustration: "first-website", alt: "HTML code turning into my first portfolio page", caption: "A few lines of HTML, a little CSS — and suddenly I had a website." },
         paragraphs: [
           "I started where most people start: HTML and CSS. HTML gave me the structure, CSS made it look good. Once I got comfortable, I built my own portfolio — my first real project, something I could open and say, \"I made this.\"",
         ],
       },
       {
         heading: "Then came JavaScript",
-        image: { illustration: "js-logic", alt: "A JavaScript flowchart where one branch works and one throws an error", caption: "JavaScript: where one wrong condition breaks everything." },
         paragraphs: [
           "JavaScript is where I felt how hard programming really is. HTML and CSS describe how things look, but JavaScript is pure logic — conditions, loops, functions, state. Things broke all the time, and I didn't always know why.",
           "But that's also what hooked me. I love logic puzzles, and code turned out to be the biggest puzzle of all. So I kept exploring, kept breaking things, and kept building:",
@@ -113,7 +92,7 @@ export const posts: BlogPost[] = [
       "From copy-pasting ChatGPT answers that never quite worked, to free coding agents, to Claude Code — how AI went from useless to my everyday building partner.",
     date: "2026-11-09",
     tags: ["Story", "AI"],
-    cover: { illustration: "ai-timeline", alt: "My AI journey from a chatbot to a free coding agent to Claude Code" },
+    cover: { src: "/images/blog/ai-terminal.png", alt: "Stippled drawing of a chat bubble next to a coding terminal with a sparkle" },
     body: [
       {
         paragraphs: [
@@ -122,7 +101,6 @@ export const posts: BlogPost[] = [
       },
       {
         heading: "When AI was just a chatbot",
-        image: { illustration: "chat-copy-paste", alt: "Asking an AI chatbot for code, pasting it, and getting an error", caption: "My 2023 workflow: copy, paste, error, repeat." },
         paragraphs: [
           "Back in 2023 to 2024, AI to me was just a chatbot. I'd open ChatGPT, describe what I wanted, and ask it to give me the code. Then I'd copy it, paste it into my project, and hope it worked.",
           "Most of the time, it didn't. AI wasn't that good at coding back then. The code looked right but broke when I ran it, missed parts of what I asked for, or didn't fit the rest of my project. I spent more time fixing its answers than I would have spent writing the code myself.",
@@ -138,7 +116,6 @@ export const posts: BlogPost[] = [
       },
       {
         heading: "Discovering OpenCode",
-        image: { illustration: "free-agent", alt: "A free coding agent editing files, breaking something, then fixing it", caption: "Free models weren't perfect — but they got there." },
         paragraphs: [
           "Then I found OpenCode — a coding agent that could run on free models. For the first time, I had an AI that could actually work inside my project: reading my code, changing my files, and helping me build.",
           "Honestly, it wasn't that good. The free models made mistakes, got confused on bigger tasks, and I still had to fix a lot. But that was okay. At least I had an AI helping me make my projects better, and I learned a lot about how to work with one.",
@@ -146,7 +123,6 @@ export const posts: BlogPost[] = [
       },
       {
         heading: "Finally: Claude Code",
-        image: { illustration: "agent-building", alt: "A coding agent planning and building a full booking system", caption: "Describe it, and watch it get built." },
         paragraphs: [
           "When I could finally afford it, I bought a Claude Code subscription. And wow — it was on a completely different level.",
           "It understood my whole project, planned changes across many files, fixed its own errors, and actually built what I described. Things that used to take me days now took an afternoon. I remember just watching it work and thinking: how is it doing all of this?",
@@ -180,7 +156,7 @@ export const posts: BlogPost[] = [
       "Logic from math, planning from chess, and patterns from the Rubik's cube — how the games I grew up with turned into the skills I use to code.",
     date: "2026-11-09",
     tags: ["Story", "Logic"],
-    cover: { illustration: "games-to-code", alt: "Math, chess, and a Rubik's cube adding up to code" },
+    cover: { src: "/images/blog/cube-pawn.png", alt: "Stippled drawing of a Rubik's cube and a chess pawn" },
     body: [
       {
         paragraphs: [
@@ -190,7 +166,6 @@ export const posts: BlogPost[] = [
       },
       {
         heading: "The toy that kept asking questions",
-        image: { illustration: "quiz-toy", alt: "A kids' quiz toy asking 7 + 5", caption: "Every question was a little mystery I had to solve." },
         paragraphs: [
           "I was 4 years old when I found it: a toy that belonged to my cousins. It asked you questions, and you had to answer them. Most of the questions were math.",
           "For most kids, it was just a toy with buttons. For me, it was a challenge. Every question was a little mystery, and I wasn't happy until I got it right. Then I wanted the next one. And the next one.",
@@ -206,7 +181,6 @@ export const posts: BlogPost[] = [
       },
       {
         heading: "\"Pa, can you teach me that?\"",
-        image: { illustration: "chessboard", alt: "A chessboard showing a knight's possible moves", caption: "Every move starts with one question: what happens next?" },
         paragraphs: [
           "That same year, I kept noticing my father playing chess. I had no idea what was happening on that board — just a bunch of pieces moving around. But I could see one thing clearly: the people playing were really enjoying it.",
           "So, of course, I got curious. I asked my father to teach me.",
@@ -220,7 +194,6 @@ export const posts: BlogPost[] = [
       },
       {
         heading: "Six colors and a lot of frustration",
-        image: { illustration: "rubiks-cube", alt: "A Rubik's cube: learn the pattern, then make it yours", caption: "Learn the pattern first. Then make it your own." },
         paragraphs: [
           "Then at 9, a new opponent showed up: the Rubik's cube.",
           "Here's the thing nobody tells you — you don't solve a Rubik's cube by being a genius. You learn the patterns other people already figured out, and you follow them, step by step, twist by twist.",
