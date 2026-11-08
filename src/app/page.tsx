@@ -7,7 +7,6 @@ import {
   CertificationRows,
   ServiceRows,
   StackRows,
-  BlogPreview,
 } from "@/components/home/list-sections";
 
 // Editorial, list-based home: each section rises in one after another
@@ -22,7 +21,6 @@ export default function Home() {
       <ExperienceRows />
       <ProjectRows />
       <ServiceRows />
-      <BlogPreview />
       <CertificationRows />
       <StackRows />
     </div>
