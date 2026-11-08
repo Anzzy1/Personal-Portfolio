@@ -140,38 +140,64 @@ export const posts: BlogPost[] = [
     ],
   },
   {
-    slug: "from-learning-to-building-for-clients",
-    title: "From learning to building for real clients",
+    slug: "math-chess-rubiks-cube",
+    title: "Math at 4, chess at 5, Rubik's cube at 9: how logic made me a developer",
     excerpt:
-      "The jump from practice projects to freelance work — and what I learned building things people actually depend on.",
+      "Long before I wrote my first line of code, I was already solving puzzles. Here's how math, chess, and the Rubik's cube shaped the way I build.",
     date: "2026-11-09",
-    tags: ["Story", "Freelance"],
+    tags: ["Story", "Logic"],
     body: [
       {
         paragraphs: [
-          "For a long time, everything I built was just for me — practice projects nobody else would ever use. Then one day I realized I had come full circle: I wanted to do what my cousin did, and build systems for real clients.",
+          "People think coding starts when you open a code editor. For me, it started way earlier — with a toy, a chessboard, and a cube.",
         ],
       },
       {
-        heading: "Practice projects vs. real projects",
+        heading: "Age 4: a toy full of questions",
         paragraphs: [
-          "A practice project can break and nobody cares. A client's project can't. When someone's business depends on what you build, small details suddenly matter: does it load fast, does it work on a cheap phone, what happens when the internet drops?",
+          "When I was 4, my cousins had a toy that asked you questions, and you had to answer them. Most of them were math. While other kids just pressed buttons, I wanted to get every answer right.",
+          "That little toy is where I first found out I was good at logic. Without knowing it, I was already training my critical thinking — reading a problem, figuring out what it's asking, and finding the answer.",
         ],
       },
       {
-        heading: "What I learned along the way",
-        paragraphs: ["Building for others taught me lessons no tutorial did:"],
+        heading: "Age 5: falling in love with math",
+        paragraphs: [
+          "I quickly realized I didn't just solve math — I loved it. By the time I was 5, I already knew how to add, subtract, multiply, and divide.",
+          "To me, math wasn't homework. It was a puzzle with exactly one right answer, and finding it felt amazing.",
+        ],
+      },
+      {
+        heading: "Also age 5: my father's chessboard",
+        paragraphs: [
+          "That same year, I noticed my father playing chess. I didn't know how it worked, but I could see how much the players enjoyed it — so I got curious and asked him to teach me.",
+          "I picked it up fast. Really fast. And the more I played, the more I loved it, because chess trained something math alone didn't:",
+        ],
         list: [
-          "Listen first — the real problem is often different from the first request",
-          "Simple and reliable beats clever and fragile",
-          "Design for the people who will actually use it, not for a perfect demo",
-          "Keep the client updated, so there are no surprises",
+          "Planning — thinking several moves ahead before making one",
+          "Decision making — choosing the best option, not just the first one",
+          "Seeing consequences — every move changes the whole board",
         ],
       },
       {
-        heading: "Still that same curious kid",
+        heading: "Age 9: cracking the Rubik's cube",
         paragraphs: [
-          "Every project still gives me the same feeling I had on that old PC — the excitement of turning an idea into something real. The only difference now is that it helps someone else too. And that's the best part.",
+          "At 9, I learned how to solve a Rubik's cube. Here's the secret: you don't start by inventing anything. You learn the patterns other people already figured out, and you follow them step by step.",
+          "But once you master those patterns, something changes. You start seeing shortcuts. You find your own way — one that's faster and better than the method you first copied.",
+        ],
+      },
+      {
+        heading: "The cube is exactly how coding works",
+        paragraphs: [
+          "Years later, I realized learning to code is the same as learning the cube.",
+          "Honestly, we all start by copying. We see a project we think is amazing, and we rebuild it line by line to understand how it works. That's not cheating — that's learning the patterns.",
+          "Then one day, you stop copying. You start figuring things out yourself. You find a cleaner way, a faster way, a smarter way — until what you build is better than the thing you once copied.",
+        ],
+      },
+      {
+        heading: "Logic is still my secret weapon",
+        paragraphs: [
+          "Every time I build something today, I'm using the same skills that toy, that chessboard, and that cube gave me. Reading a problem like a math question. Planning a system like a chess game, several moves ahead. And learning from others before making it my own, like the cube.",
+          "Code is just where all of it comes together. That's why I love it.",
         ],
       },
     ],
