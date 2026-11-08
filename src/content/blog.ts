@@ -149,74 +149,80 @@ export const posts: BlogPost[] = [
     body: [
       {
         paragraphs: [
-          "People think coding starts when you open a code editor. For me, it started way earlier — with a toy, a chessboard, and a cube.",
+          "Most people think coding starts the day you open a code editor. Mine started years earlier — with a quiz toy, my father's chessboard, and a scrambled cube that refused to cooperate.",
+          "I didn't know it back then, but I was already training for the job I do today.",
         ],
       },
       {
-        heading: "Age 4: a toy full of questions",
+        heading: "The toy that kept asking questions",
         paragraphs: [
-          "When I was 4, my cousins had a toy that asked you questions, and you had to answer them. Most of them were math. While other kids just pressed buttons, I wanted to get every answer right.",
-          "That little toy is where I first found out I was good at logic. Without knowing it, I was already training my critical thinking — reading a problem, figuring out what it's asking, and finding the answer.",
+          "I was 4 years old when I found it: a toy that belonged to my cousins. It asked you questions, and you had to answer them. Most of the questions were math.",
+          "For most kids, it was just a toy with buttons. For me, it was a challenge. Every question was a little mystery, and I wasn't happy until I got it right. Then I wanted the next one. And the next one.",
+          "That's when I first found out something about myself: I was good at logic. Without even knowing the word, I was already practicing critical thinking — read the problem, figure out what it's really asking, find the answer.",
         ],
       },
       {
-        heading: "Age 5: falling in love with math",
+        heading: "The 5-year-old who thought math was fun",
         paragraphs: [
-          "I quickly realized I didn't just solve math — I loved it. By the time I was 5, I already knew how to add, subtract, multiply, and divide.",
-          "To me, math wasn't homework. It was a puzzle with exactly one right answer, and finding it felt amazing.",
+          "That toy started something. I didn't just solve math — I fell in love with it.",
+          "By the time I was 5, I already knew how to add, subtract, multiply, and divide. While math sounds like homework to most people, to me it was a puzzle with exactly one right answer hiding somewhere. Finding it felt like winning.",
         ],
       },
       {
-        heading: "Also age 5: my father's chessboard",
+        heading: "\"Pa, can you teach me that?\"",
         paragraphs: [
-          "That same year, I noticed my father playing chess. I didn't know how it worked, but I could see how much the players enjoyed it — so I got curious and asked him to teach me.",
-          "I picked it up fast. Really fast. And the more I played, the more I loved it, because chess trained something math alone didn't:",
+          "That same year, I kept noticing my father playing chess. I had no idea what was happening on that board — just a bunch of pieces moving around. But I could see one thing clearly: the people playing were really enjoying it.",
+          "So, of course, I got curious. I asked my father to teach me.",
+          "And I picked it up fast. The more I played, the more I loved it, because chess wasn't about one right answer like math. It was about thinking ahead. Every move I made, I had to ask myself:",
         ],
         list: [
-          "Planning — thinking several moves ahead before making one",
-          "Decision making — choosing the best option, not just the first one",
-          "Seeing consequences — every move changes the whole board",
+          "If I move this piece, what happens next?",
+          "How will my opponent answer?",
+          "And how do I actually win from here?",
         ],
       },
       {
-        heading: "Age 9: cracking the Rubik's cube",
+        heading: "Six colors and a lot of frustration",
         paragraphs: [
-          "At 9, I learned how to solve a Rubik's cube. Here's the secret: you don't start by inventing anything. You learn the patterns other people already figured out, and you follow them step by step.",
-          "But once you master those patterns, something changes. You start seeing shortcuts. You find your own way — one that's faster and better than the method you first copied.",
+          "Then at 9, a new opponent showed up: the Rubik's cube.",
+          "Here's the thing nobody tells you — you don't solve a Rubik's cube by being a genius. You learn the patterns other people already figured out, and you follow them, step by step, twist by twist.",
+          "But something interesting happens once you master those patterns. You start seeing shortcuts. You stop following the guide and start finding your own way — one that's faster and smarter than the method you first learned.",
         ],
       },
       {
-        heading: "How it all carried over into coding",
+        heading: "Plot twist: I was training for coding all along",
         paragraphs: [
-          "When I started programming, I didn't feel like I was starting from zero. The skills I picked up from these games came with me — I just started using them on code.",
+          "Years later, I sat down in front of a very old PC and started learning to code. And something surprised me: I wasn't starting from zero.",
+          "Every game I loved as a kid had quietly given me a skill. Now I just had a new board to play on.",
         ],
       },
       {
-        heading: "Math → solving complicated problems",
+        heading: "Math taught me not to panic",
         paragraphs: [
-          "Math taught me how to face a hard problem without panicking: break it down, understand what it's really asking, and work step by step until I find the solution.",
-          "That's exactly what coding is. When a feature is complicated or a bug makes no sense, I use the same logical thinking I used on math problems as a kid — figure out the pieces, solve them one by one, and put them back together.",
+          "A hard math problem and a hard bug feel exactly the same: confusing at first, impossible-looking, a little scary.",
+          "But math taught me what to do. Break it down. Understand what it's really asking. Solve one piece at a time, then put them back together. When a feature is complicated or my code breaks for no reason, I'm still that 4-year-old with the quiz toy — not stopping until I find the answer.",
         ],
       },
       {
-        heading: "Chess → planning and decision making",
+        heading: "Chess taught me to think three moves ahead",
         paragraphs: [
-          "In chess, you're always forecasting: if I make this move, what happens next? How will my opponent respond? And how do I actually win from here?",
-          "I think the same way when I build a system. Before writing code, I ask: if I build it this way, what happens later? What breaks when more users come in? What will be hard to change? Choosing the right move early saves a lot of pain later — on the board and in a project.",
+          "In chess, a careless move can lose you the game ten moves later. Building software works the same way.",
+          "So before I write code, I play it out in my head like a chess game: if I build it this way, what happens next? What breaks when more people use it? What will be painful to change later? How do I \"win\" — a system that's fast, reliable, and easy to grow? A good move early saves a lot of pain later, on the board and in a project.",
         ],
       },
       {
-        heading: "Rubik's cube → learn the pattern, then make it better",
+        heading: "The cube taught me it's okay to copy — at first",
         paragraphs: [
-          "The cube taught me how learning really works. You start by learning the patterns other people figured out. Once you master them, you find your own way — one that's better than what you first learned.",
-          "Coding is the same. Honestly, we all start by copying — we see a project we think is amazing and rebuild it to understand how it works. Then one day, you stop copying. You start figuring things out yourself, finding a cleaner and smarter way, until what you build is better than the thing you once copied.",
+          "This one is my favorite, because it's exactly how learning to code works.",
+          "Honestly, we all start by copying. We see a project we think is amazing, and we rebuild it piece by piece just to understand how it works. That's not cheating — that's learning the patterns, just like the cube.",
+          "Then one day, you stop needing the guide. You start figuring things out yourself, finding a cleaner way, a faster way, a smarter way — until what you build is better than the thing you once copied.",
         ],
       },
       {
-        heading: "Still playing the same games",
+        heading: "I never stopped playing",
         paragraphs: [
-          "Every time I build something today, I'm still using what those games gave me: logic from math, planning from chess, and the copy-then-improve mindset from the cube.",
-          "I never stopped playing — the game just changed to code. And that's why I love it.",
+          "Every time I build something today, I'm still using what those games gave me: the logic from math, the planning from chess, and the learn-then-improve mindset from the cube.",
+          "I never really stopped playing. The game just changed — and now it's called code.",
         ],
       },
     ],
