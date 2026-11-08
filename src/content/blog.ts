@@ -25,114 +25,137 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
-    slug: "rules-first-ai-second",
-    title: "Rules first, AI second: how BaonBuddy keeps the numbers honest",
+    slug: "how-i-started-coding",
+    title: "How a ₱200,000 client got a 9-year-old into coding",
     excerpt:
-      "Why my student budget app never lets the AI touch the math — and what the model is actually allowed to do.",
-    date: "2026-11-08",
-    tags: ["AI", "App"],
-    project: "baonbuddy",
+      "I didn't care about code at first — until I saw what one system was worth. This is how my journey started, on a very old PC.",
+    date: "2026-11-09",
+    tags: ["Story", "Journey"],
     body: [
       {
         paragraphs: [
-          "When you build a money app, one wrong number is enough to lose someone's trust. That's why BaonBuddy follows one simple rule: the AI never decides an amount.",
+          "I was 9 years old the first time I saw someone write code. It was my cousin, sitting in front of a screen full of colored text that made no sense to me. Honestly? I wasn't interested. It looked boring, and I didn't understand any of it.",
         ],
       },
       {
-        heading: "The problem with letting a model do math",
+        heading: "The moment it clicked",
         paragraphs: [
-          "Language models are great at understanding casual Taglish like \"pamasahe 20 tas milk tea 120\", but they can still miscount, round wrong, or invent a total that looks believable. For a student on a tight baon, a made-up number is worse than no number at all.",
+          "That changed the day my cousin got a client. One client, one system — and it was worth ₱200,000, right away. I remember thinking: wait, what do you mean one client is worth 200k, just for a system?",
+          "That was when I realized this thing I didn't understand was actually powerful. Those lines of text could turn into something people would pay a lot of money for. I wanted to understand it.",
         ],
       },
       {
-        heading: "What runs on rules",
-        paragraphs: ["Everything that touches money is plain, predictable code:"],
+        heading: "A very old PC and my first line of code",
+        paragraphs: [
+          "My setup was nothing special — a very old PC that was slow to boot and even slower to open a browser. But it could run a text editor, and that was enough. I wrote my first code on that machine, and seeing something I typed actually show up on the screen felt like magic.",
+        ],
+      },
+      {
+        heading: "HTML, CSS, and my first portfolio",
+        paragraphs: [
+          "I started where most people start: HTML and CSS. HTML gave me the structure, CSS made it look good. Once I got comfortable, I built my own portfolio — my first real project, something I could open and say, \"I made this.\"",
+        ],
+      },
+      {
+        heading: "Then came JavaScript",
+        paragraphs: [
+          "JavaScript is where I felt how hard programming really is. HTML and CSS describe how things look, but JavaScript is pure logic — conditions, loops, functions, state. Things broke all the time, and I didn't always know why.",
+          "But that's also what hooked me. I love logic puzzles, and code turned out to be the biggest puzzle of all. So I kept exploring, kept breaking things, and kept building:",
+        ],
         list: [
-          "Parsing messages like \"jeep 13, lunch 85\" into categorized expenses",
-          "Computing how much you can still spend per day",
-          "Checking receipt totals — every amount must actually appear in the OCR text",
+          "Small interactive pages with buttons that actually did something",
+          "Little tools and games to practice logic",
+          "Bigger projects, one feature at a time",
         ],
       },
       {
-        heading: "What the AI is allowed to do",
+        heading: "Where it led",
         paragraphs: [
-          "The local LLM only rewrites Buddy's advice so it sounds friendly and natural. The numbers in that advice come from the budget math, not from the model. Voice input goes through Whisper right in the browser, and receipts are read with on-device OCR, so everything stays private and works even without signal.",
-          "The result: the app feels smart, but it's always correct. That's the balance I aim for whenever I add AI to a project.",
+          "That curious kid watching his cousin now builds websites, web systems, and apps for real clients. The old PC is long gone, but the feeling is the same: I build because I love making things that didn't exist before.",
         ],
       },
     ],
   },
   {
-    slug: "an-ai-assistant-that-cant-make-things-up",
-    title: "Building a portfolio assistant that can't make things up",
+    slug: "how-i-started-vibe-coding-with-ai",
+    title: "How I started vibe coding with AI",
     excerpt:
-      "How Anzyy AI answers visitors in English or Filipino using only what's actually on this site.",
-    date: "2026-11-08",
-    tags: ["AI", "Web System"],
-    project: "portfolio-ai-assistant",
+      "From typing every line by hand to building with AI as a partner — and why knowing the fundamentals still matters.",
+    date: "2026-11-09",
+    tags: ["Story", "AI"],
     body: [
       {
         paragraphs: [
-          "Most visitors don't read a whole portfolio. They have one or two questions — \"can you build this?\", \"how do we start?\" — and leave if the answer isn't easy to find. So I built an assistant that lives on every page and answers in seconds.",
+          "For years, I wrote every line of code by hand. Then AI coding tools showed up, and the way I build changed completely. People call it vibe coding — describing what you want and letting AI help write it. Here's how I got into it.",
         ],
       },
       {
-        heading: "One source of truth",
+        heading: "Skeptical at first",
         paragraphs: [
-          "All my projects, services, and profile details live in typed content files. The website reads them, and so does the assistant. Update a project once and the AI knows about it instantly — the site and the chat can never disagree.",
+          "When I first tried AI for coding, I didn't trust it. It gave me code that looked right but didn't work, or used things that didn't exist. I thought it was just a toy.",
+          "But I kept testing it on small tasks — fixing a bug, explaining an error, writing a function I didn't feel like typing. Slowly, I noticed I was finishing things a lot faster.",
         ],
       },
       {
-        heading: "Keeping it honest",
+        heading: "Learning to talk to AI",
+        paragraphs: [
+          "The big shift was realizing that AI is only as good as the instructions you give it. Vague prompts gave me messy code. Clear prompts — with context, the goal, and the rules to follow — gave me code I could actually ship.",
+          "It felt like learning a new programming language, except the language was plain English.",
+        ],
+      },
+      {
+        heading: "Why fundamentals still matter",
+        paragraphs: [
+          "Vibe coding works best when you understand what the AI is writing. All those hours struggling with JavaScript logic paid off here: I can read what it gives me, spot when it's wrong, and steer it back on track.",
+        ],
         list: [
-          "A strict system prompt and content-only context, so it can't invent prices, timelines, or projects",
-          "Simple rules detect Filipino and Taglish questions so it replies in the same language",
-          "If the model is ever unavailable, a local keyword responder takes over, so the chat never goes down",
+          "I let AI handle the repetitive parts, so I can focus on the hard decisions",
+          "I always review and test what it writes before it goes live",
+          "I never let AI decide anything that has to be exact — like money or totals",
         ],
-        paragraphs: ["A few guardrails do most of the work:"],
       },
       {
-        heading: "Small details that matter",
+        heading: "From using AI to building with it",
         paragraphs: [
-          "Suggested questions show up when you open the chat, because most people don't know what to ask. Each reply ends with buttons that take you straight to the right project, service, or contact page. Try it — press Ctrl K anywhere on this site.",
+          "Once I got comfortable, I didn't just use AI to code — I started putting AI inside the things I build. Chatbots that answer from real business data, apps that understand Taglish, and the assistant on this very site (press Ctrl K to try it).",
+          "Today, AI is part of how I work every day. It doesn't replace the builder — it lets one person build like a small team.",
         ],
       },
     ],
   },
   {
-    slug: "offline-first-for-the-sari-sari-store",
-    title: "Why a sari-sari store system has to work offline",
+    slug: "from-learning-to-building-for-clients",
+    title: "From learning to building for real clients",
     excerpt:
-      "Lessons from designing TindaHub: tingi units, utang per suki, and a counter that never stops selling.",
-    date: "2026-11-08",
-    tags: ["Web System"],
-    project: "tindahub",
+      "The jump from practice projects to freelance work — and what I learned building things people actually depend on.",
+    date: "2026-11-09",
+    tags: ["Story", "Freelance"],
     body: [
       {
         paragraphs: [
-          "A big sari-sari store moves hundreds of small sales a day, with several staff behind the counter. When I designed TindaHub, the first question wasn't about features — it was: what happens when the internet drops?",
+          "For a long time, everything I built was just for me — practice projects nobody else would ever use. Then one day I realized I had come full circle: I wanted to do what my cousin did, and build systems for real clients.",
         ],
       },
       {
-        heading: "The counter can't stop",
+        heading: "Practice projects vs. real projects",
         paragraphs: [
-          "Store internet is unreliable, and a line of customers won't wait for a page to load. So every sale is saved on the device first and synced when the connection comes back. The hard part is keeping stock correct when two cashiers sell the same item at the same time, even while one of them is offline.",
+          "A practice project can break and nobody cares. A client's project can't. When someone's business depends on what you build, small details suddenly matter: does it load fast, does it work on a cheap phone, what happens when the internet drops?",
         ],
       },
       {
-        heading: "Designing for how the store actually works",
-        paragraphs: ["A few decisions came straight from watching how a sari-sari store runs:"],
+        heading: "What I learned along the way",
+        paragraphs: ["Building for others taught me lessons no tutorial did:"],
         list: [
-          "Tingi units — one product sold per pack, per stick, or per kilo, while keeping one accurate stock count",
-          "Utang tied to a suki profile instead of notebook notes, so balances never get lost or mixed up",
-          "Taglish labels like Benta, Utang, and Gastos, with big tap targets for busy cashiers",
-          "A restock list generated from reorder points, ready to send to the supplier",
+          "Listen first — the real problem is often different from the first request",
+          "Simple and reliable beats clever and fragile",
+          "Design for the people who will actually use it, not for a perfect demo",
+          "Keep the client updated, so there are no surprises",
         ],
       },
       {
-        heading: "The payoff",
+        heading: "Still that same curious kid",
         paragraphs: [
-          "Instead of spending hours adding everything up at night, the owner opens the dashboard and sees today's sales, real gross profit, overdue utang, and what needs restocking — on any phone, tablet, or laptop.",
+          "Every project still gives me the same feeling I had on that old PC — the excitement of turning an idea into something real. The only difference now is that it helps someone else too. And that's the best part.",
         ],
       },
     ],

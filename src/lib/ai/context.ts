@@ -16,7 +16,7 @@ const pages = [
   ["/services", "Services, add-ons, how projects work, pricing FAQ"],
   ["/about", "Background, experience, tech stack, interests"],
   ["/certifications", "Certifications and awards"],
-  ["/blog", "Blog posts about how projects were built"],
+  ["/blog", "Personal stories: getting into coding, vibe coding with AI, and freelancing"],
   ["/claim", "Claim a founding-client spot"],
   ["/contact", "Contact form (replies within 24 hours)"],
   ["/play", "A Tetris game, just for fun"],

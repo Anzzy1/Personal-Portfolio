@@ -7,8 +7,8 @@ import { PageHeader, Tag } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/reveal";
 
 export const metadata: Metadata = {
-  title: "Blog — Notes on Building",
-  description: `Notes from ${profile.name} on building websites, web systems, apps, and AI features.`,
+  title: "Blog — My Story",
+  description: `Stories from ${profile.name}: getting into coding, vibe coding with AI, and building for clients.`,
   alternates: { canonical: "/blog" },
 };
 
@@ -17,9 +17,9 @@ export default function BlogPage() {
     <>
       <PageHeader
         eyebrow="Blog"
-        title="Notes from"
-        accent="the build."
-        description="Short write-ups on how I design and build things — the decisions, the trade-offs, and what I learned along the way."
+        title="Stories from"
+        accent="the journey."
+        description="How I got into coding, how I started building with AI, and what I learned along the way."
       />
 
       <div className="mt-10 flex flex-col gap-4">
