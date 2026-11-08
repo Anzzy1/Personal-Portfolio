@@ -141,9 +141,9 @@ export const posts: BlogPost[] = [
   },
   {
     slug: "math-chess-rubiks-cube",
-    title: "What a chessboard and a Rubik's cube taught me about code",
+    title: "The games I loved as a kid shaped how I code",
     excerpt:
-      "Long before I wrote my first line of code, I was already solving puzzles. Here's how math, chess, and the Rubik's cube shaped the way I build.",
+      "Logic from math, planning from chess, and patterns from the Rubik's cube — how the games I grew up with turned into the skills I use to code.",
     date: "2026-11-09",
     tags: ["Story", "Logic"],
     body: [
@@ -186,18 +186,37 @@ export const posts: BlogPost[] = [
         ],
       },
       {
-        heading: "The cube is exactly how coding works",
+        heading: "How it all carried over into coding",
         paragraphs: [
-          "Years later, I realized learning to code is the same as learning the cube.",
-          "Honestly, we all start by copying. We see a project we think is amazing, and we rebuild it line by line to understand how it works. That's not cheating — that's learning the patterns.",
-          "Then one day, you stop copying. You start figuring things out yourself. You find a cleaner way, a faster way, a smarter way — until what you build is better than the thing you once copied.",
+          "When I started programming, I didn't feel like I was starting from zero. The skills I picked up from these games came with me — I just started using them on code.",
         ],
       },
       {
-        heading: "Logic is still my secret weapon",
+        heading: "Math → solving complicated problems",
         paragraphs: [
-          "Every time I build something today, I'm using the same skills that toy, that chessboard, and that cube gave me. Reading a problem like a math question. Planning a system like a chess game, several moves ahead. And learning from others before making it my own, like the cube.",
-          "Code is just where all of it comes together. That's why I love it.",
+          "Math taught me how to face a hard problem without panicking: break it down, understand what it's really asking, and work step by step until I find the solution.",
+          "That's exactly what coding is. When a feature is complicated or a bug makes no sense, I use the same logical thinking I used on math problems as a kid — figure out the pieces, solve them one by one, and put them back together.",
+        ],
+      },
+      {
+        heading: "Chess → planning and decision making",
+        paragraphs: [
+          "In chess, you're always forecasting: if I make this move, what happens next? How will my opponent respond? And how do I actually win from here?",
+          "I think the same way when I build a system. Before writing code, I ask: if I build it this way, what happens later? What breaks when more users come in? What will be hard to change? Choosing the right move early saves a lot of pain later — on the board and in a project.",
+        ],
+      },
+      {
+        heading: "Rubik's cube → learn the pattern, then make it better",
+        paragraphs: [
+          "The cube taught me how learning really works. You start by learning the patterns other people figured out. Once you master them, you find your own way — one that's better than what you first learned.",
+          "Coding is the same. Honestly, we all start by copying — we see a project we think is amazing and rebuild it to understand how it works. Then one day, you stop copying. You start figuring things out yourself, finding a cleaner and smarter way, until what you build is better than the thing you once copied.",
+        ],
+      },
+      {
+        heading: "Still playing the same games",
+        paragraphs: [
+          "Every time I build something today, I'm still using what those games gave me: logic from math, planning from chess, and the copy-then-improve mindset from the cube.",
+          "I never stopped playing — the game just changed to code. And that's why I love it.",
         ],
       },
     ],
