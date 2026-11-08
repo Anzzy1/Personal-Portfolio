@@ -5,6 +5,7 @@ import { profile } from "@/content/profile";
 import { formatPostDate, posts, readingTime } from "@/content/blog";
 import { PageHeader, Tag } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/reveal";
+import { BlogFigure } from "@/components/blog/blog-figure";
 
 export const metadata: Metadata = {
   title: "Blog — My Story",
@@ -29,6 +30,11 @@ export default function BlogPage() {
               href={`/blog/${post.slug}`}
               className="card card-hover group flex flex-col gap-3 p-6 sm:p-7"
             >
+              {post.cover && (
+                <div className="mb-2">
+                  <BlogFigure image={post.cover} eager={i === 0} />
+                </div>
+              )}
               <span className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] text-subtle">
                 <time dateTime={post.date}>{formatPostDate(post.date)}</time>
                 <span aria-hidden>·</span>

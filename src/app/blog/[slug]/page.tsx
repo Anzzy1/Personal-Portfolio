@@ -6,6 +6,7 @@ import { ArrowLeftIcon, ArrowRightIcon } from "@phosphor-icons/react/dist/ssr";
 import { formatPostDate, getPost, posts, readingTime } from "@/content/blog";
 import { getProject } from "@/content/projects";
 import { Tag } from "@/components/ui/primitives";
+import { BlogFigure } from "@/components/blog/blog-figure";
 import { Reveal } from "@/components/ui/reveal";
 
 export function generateStaticParams() {
@@ -83,6 +84,11 @@ async function PostContent({ params }: { params: Promise<{ slug: string }> }) {
             <Tag key={t}>{t}</Tag>
           ))}
         </div>
+        {post.cover && (
+          <div className="mt-8">
+            <BlogFigure image={post.cover} eager />
+          </div>
+        )}
       </header>
 
       <div className="mt-10 space-y-9 border-t border-border pt-10">
@@ -104,6 +110,11 @@ async function PostContent({ params }: { params: Promise<{ slug: string }> }) {
                     </li>
                   ))}
                 </ul>
+              )}
+              {section.image && (
+                <div className="pt-2">
+                  <BlogFigure image={section.image} />
+                </div>
               )}
             </section>
           </Reveal>
