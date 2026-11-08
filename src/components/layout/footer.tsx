@@ -8,8 +8,8 @@ import { HideOn } from "@/components/layout/hide-on";
 export function Footer() {
   return (
     <footer className="mt-28">
-      {/* Not needed under the game, or on pages that already have their own form */}
-      <HideOn paths={["/play", "/contact", "/claim"]}>
+      {/* Not needed under the game, on the blog, or on pages that already have their own form */}
+      <HideOn paths={["/play", "/contact", "/claim", "/blog"]}>
         <Reveal>
           <div className="spotlight card overflow-hidden px-6 py-10 text-center sm:px-10 sm:py-14">
             <p className="label">Got an idea?</p>
