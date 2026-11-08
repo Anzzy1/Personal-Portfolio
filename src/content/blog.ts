@@ -78,7 +78,7 @@ export const posts: BlogPost[] = [
   },
   {
     slug: "how-i-started-vibe-coding-with-ai",
-    title: "How I started vibe coding with AI",
+    title: "I quit using AI for coding — then everything changed",
     excerpt:
       "From copy-pasting ChatGPT answers that never quite worked, to free coding agents, to Claude Code — how AI went from useless to my everyday building partner.",
     date: "2026-11-09",
@@ -141,7 +141,7 @@ export const posts: BlogPost[] = [
   },
   {
     slug: "math-chess-rubiks-cube",
-    title: "Math at 4, chess at 5, Rubik's cube at 9: how logic made me a developer",
+    title: "What a chessboard and a Rubik's cube taught me about code",
     excerpt:
       "Long before I wrote my first line of code, I was already solving puzzles. Here's how math, chess, and the Rubik's cube shaped the way I build.",
     date: "2026-11-09",
