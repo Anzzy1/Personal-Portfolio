@@ -34,6 +34,7 @@ export function projectTheme(project: Project) {
 
 // Hand-made covers for projects that deserve more than the generic window mock
 const customPreviews: Record<string, () => React.ReactNode> = {
+  paluwagan: PaluwaganPreview,
   baonbuddy: BaonBuddyPreview,
   tindahub: TindaHubPreview,
   "kape-luna": KapeLunaPreview,
@@ -169,6 +170,66 @@ function LandingMock({ title }: { title: string }) {
         {[0, 1, 2].map((i) => (
           <div key={i} className="aspect-square rounded-lg bg-surface-2" />
         ))}
+      </div>
+    </div>
+  );
+}
+
+/** Paluwagan: the real desktop app in a browser window on green, with the phone app in front */
+function PaluwaganPreview() {
+  const features = [
+    { icon: UsersThreeIcon, label: "Online & offline" },
+    { icon: SparkleIcon, label: "Digital bunot" },
+    { icon: CalendarCheckIcon, label: "Auto-reminders" },
+  ];
+  return (
+    <div className="@container absolute inset-0 isolate overflow-hidden bg-[linear-gradient(150deg,#16a34a,#0b5e2a)]">
+      <span className="absolute -right-[12%] -top-[35%] -z-10 size-[60%] rounded-full bg-[radial-gradient(circle,#f5b53d,transparent_65%)] opacity-55 blur-2xl" />
+      <span className="absolute -bottom-[45%] -left-[12%] -z-10 size-[65%] rounded-full bg-[radial-gradient(circle,#34d27a,transparent_65%)] opacity-50 blur-2xl" />
+      <span className="absolute inset-0 -z-10 bg-[radial-gradient(rgb(255_255_255/0.13)_1px,transparent_1px)] [background-size:14px_14px] [mask-image:linear-gradient(transparent,black_70%)]" />
+
+      <div className="absolute inset-x-0 top-[5.5%] flex justify-center gap-[1.6cqw] px-[4%]">
+        {features.map(({ icon: Icon, label }) => (
+          <span
+            key={label}
+            className="inline-flex items-center gap-[0.8cqw] whitespace-nowrap rounded-full bg-white/15 px-[1.8cqw] py-[0.8cqw] text-[clamp(8px,1.7cqw,13px)] font-semibold text-white ring-1 ring-white/25 backdrop-blur-sm"
+          >
+            <Icon weight="fill" className="size-[1.25em] text-[#ffe27a]" />
+            {label}
+          </span>
+        ))}
+      </div>
+
+      {/* The real desktop app, in a browser window that runs off the bottom edge */}
+      <div className="absolute bottom-[-4%] left-[7%] right-[14%] top-[19%] overflow-hidden rounded-t-[1.6cqw] bg-white shadow-[0_30px_60px_-20px_rgb(4_30_14/0.6)] ring-1 ring-black/10">
+        <div className="flex h-[6.5%] min-h-[10px] items-center gap-[0.7cqw] border-b border-[#ededf0] px-[1.6cqw]">
+          <span className="size-[1cqw] min-h-1 min-w-1 rounded-full bg-[#ff5f57]" />
+          <span className="size-[1cqw] min-h-1 min-w-1 rounded-full bg-[#febc2e]" />
+          <span className="size-[1cqw] min-h-1 min-w-1 rounded-full bg-[#28c840]" />
+          <span className="ml-[2cqw] rounded-full bg-[#f5f5f7] px-[1.6cqw] py-[0.3cqw] font-mono text-[clamp(6px,1.1cqw,10px)] text-[#70707a]">
+            paluwagan.app
+          </span>
+        </div>
+        <div className="relative h-[93.5%]">
+          <Image
+            src="/images/projects/paluwagan-overview.jpg"
+            alt="Paluwagan home screen on desktop: next payout, savings, Ipon's tip, and payments due"
+            fill
+            sizes="(min-width: 1024px) 640px, 100vw"
+            className="object-cover object-left-top"
+          />
+        </div>
+      </div>
+
+      {/* The phone app, overlapping the window's right edge */}
+      <div className="absolute right-[5%] top-[30%] aspect-[780/1688] h-[92%] rotate-3 overflow-hidden rounded-[3cqw] border-[0.8cqw] border-[#0c1410] bg-[#0c1410] shadow-[0_30px_60px_-16px_rgb(4_30_14/0.7)]">
+        <Image
+          src="/images/projects/paluwagan-phone.jpg"
+          alt="Paluwagan home screen on a phone"
+          fill
+          sizes="(min-width: 1024px) 200px, 30vw"
+          className="rounded-[2.2cqw] object-cover object-top"
+        />
       </div>
     </div>
   );

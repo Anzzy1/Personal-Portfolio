@@ -43,6 +43,56 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "paluwagan",
+    color: "#16a34a",
+    title: "Paluwagan",
+    summary:
+      "A savings circle app for Filipino groups — run your paluwagan online or face to face, draw a fair payout order, track every hulog, and let the app send the reminders. Works in the browser today, with Android, Windows, and iOS coming soon.",
+    category: ["AI", "App"],
+    featured: true,
+    year: "2026",
+    type: "Personal project · Open beta",
+    role: "Design & full-stack development",
+    timeline: "Personal build",
+    problem:
+      "A paluwagan runs on trust and a notebook. The admin keeps the listahan by hand, the payout order is drawn from paper slips, and proof of payment gets buried in the group chat. When someone forgets a hulog or questions the draw, there's no record to settle it.",
+    solution:
+      "Paluwagan keeps the listahan for the group. Online circles let every member join with a code, link, or QR, upload receipts, and get reminders. Offline circles let one admin run everything on their phone, ticking off each hulog as it's handed over. The payout order is picked by a Digital Bunot that anyone can verify, turned into a game night with Spin the Wheel, Lucky Envelopes, and more. The app never holds money; members pay each other through GCash, Maya, bank, or cash.",
+    ai: "Ipon AI, powered by Claude, reads your circles, dues, and savings goals to answer questions like \"what do I pay this week?\" and suggest savings plans. It runs in a Supabase Edge Function, so the API key never ships in the app.",
+    metrics: [
+      { value: "Fair", label: "Verifiable draw" },
+      { value: "2 modes", label: "Online & offline" },
+      { value: "Auto", label: "Hulog reminders" },
+    ],
+    stack: ["Expo", "React Native", "TypeScript", "Supabase", "PostgreSQL", "TanStack Query", "Claude API"],
+    architecture: [
+      "One Expo codebase runs on the web today and builds for Android, iOS, and Windows",
+      "Supabase Postgres with row-level security, so members can only read the circles they belong to",
+      "Every write with business rules — joining, locking, drawing, paying, swapping turns — goes through a server-side function",
+      "Commit-reveal draw: a SHA-256 commitment is published when the circle locks, so any member can recompute the payout order on their phone",
+      "Two-sided payment sign-off: the member uploads a receipt, the recipient confirms it",
+      "Scheduled push reminders 3 days before, 1 day before, on the due date, and when overdue",
+      "Offline circles are stored on the device with SQLite, no account or internet needed",
+    ],
+    decisions: [
+      "The app never touches money — it only keeps the record — so there's nothing to steal and no license needed",
+      "Two modes instead of one, because many paluwagan are run by one trusted admin who collects in person",
+      "Draw games make bunutan night fun, while the locked-in result keeps it fair",
+      "Scam safeguards warn when a circle mentions interest or returns, and circles are invite-only",
+    ],
+    challenges: [
+      "Making the draw provably fair — the app's shuffle and the database's shuffle are tested against the same fixed result",
+      "Supporting how groups really run it: daily, kinsenas, or monthly hulog, a separate sahod schedule, turn swaps, and split slots",
+    ],
+    demo: "https://paluwagan-web-page.vercel.app/",
+    github: "https://github.com/Anzzy1/Paluwagan-App",
+    video: {
+      src: "/videos/paluwagan-demo.mp4",
+      poster: "/videos/paluwagan-demo-poster.jpg",
+      duration: "1:00",
+    },
+  },
+  {
     slug: "baonbuddy",
     cover: "/images/projects/baonbuddy-cover.jpg",
     color: "#3a4bff",

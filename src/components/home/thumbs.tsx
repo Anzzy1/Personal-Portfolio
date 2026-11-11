@@ -34,6 +34,16 @@ function Glow({ className }: { className: string }) {
 }
 
 const projectThumbs: Record<string, () => React.ReactNode> = {
+  paluwagan: () => (
+    <Frame className="bg-[linear-gradient(150deg,#16a34a,#0b5e2a)]">
+      <Glow className="-right-3 -top-4 bg-[#f5b53d]" />
+      <Glow className="-bottom-5 -left-3 bg-[#34d27a]" />
+      {/* The app's real logo on a cream tile */}
+      <span className="relative block size-9 -rotate-6 overflow-hidden rounded-[10px] bg-[#fff4da] ring-[1.5px] ring-[#0c1410]">
+        <Image src="/images/projects/paluwagan-logo.svg" alt="" fill unoptimized />
+      </span>
+    </Frame>
+  ),
   baonbuddy: () => (
     <Frame className="bg-[#3a4bff]">
       <Glow className="-right-3 -top-4 bg-[#d7f25c]" />
