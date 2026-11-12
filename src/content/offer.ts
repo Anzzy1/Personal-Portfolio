@@ -7,7 +7,7 @@
 export const offer = {
   active: true,
   total: 10,
-  claimed: 3,
+  claimed: 5,
   // Set e.g. "30% off" to show the exact amount; null shows "Big discount"
   discount: null as string | null,
   perks: ["Websites, systems, AI & apps", "Same quality, lower price", "Direct line to me"],

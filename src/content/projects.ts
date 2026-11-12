@@ -270,6 +270,50 @@ export const projects: Project[] = [
     github: "",
   },
   {
+    slug: "casidar-gadgets",
+    color: "#3d7bff",
+    title: "Casidar Gadgets",
+    summary:
+      "A website for Casidar Gadgets, a family-run iPhone and iPad shop in Antipolo and Cainta — pre-owned and brand-new units, with a request builder that lets customers ask if a model is in stock or pre-order it in a few taps.",
+    category: ["Landing Page"],
+    featured: false,
+    year: "2026",
+    type: "Client project · Gadget shop in Antipolo & Cainta",
+    role: "Design & development",
+    timeline: "Client build",
+    problem:
+      "Casidar Gadgets sells pre-owned and brand-new iPhones and iPads from two branches, but stock changes every week, so a normal product list would always be out of date. Customers kept messaging the page with the same questions — \"may iPhone 13 kayo?\", \"magkano?\", \"ilang battery health?\" — and every reply started with a long back-and-forth just to find out what they wanted.",
+    solution:
+      "Instead of listing units, the site asks the customer what they're looking for. A step-by-step request builder walks them through device, series, model, storage, condition, minimum battery health, color, budget, and branch, with a live \"ticket\" summary that updates on every choice. When they're done, it writes a ready-to-send message and opens Messenger, SMS, Viber, or email, so the shop gets a complete inquiry or pre-order in one message.",
+    metrics: [
+      { value: "2", label: "Branches, one site" },
+      { value: "Ask", label: "Or pre-order any model" },
+      { value: "No server", label: "Static & fast" },
+    ],
+    stack: ["HTML", "CSS", "JavaScript", "Vercel"],
+    architecture: [
+      "Plain HTML, CSS, and JavaScript with no build step, deployed as a static site on Vercel",
+      "Contacts, branches, unit types, the model list, and \"available now\" chips all live in one config file the family can edit",
+      "Request builder with Ask and Pre-order modes and a live ticket summary that updates with every choice",
+      "Links can pre-fill the form (mode, device, series, model, storage, branch), handy for Facebook posts",
+      "Sends through Messenger, SMS, Viber, or email — Messenger can't pre-fill text, so the message is copied for the customer to paste",
+      "Branch section with map, directions, call, and an \"Ask this branch\" button",
+      "Scroll-driven hero, parallax photos, and animated chips that all turn off with reduce motion",
+    ],
+    decisions: [
+      "No product list on purpose, because weekly stock would make one wrong most of the time",
+      "The questions customers always ask — battery health, iCloud status, openline, warranty — are built into the form and the FAQ",
+      "Light and dark themes, with the shop's blue-to-violet brand throughout",
+      "No backend or database, so the shop has nothing to maintain or pay for",
+    ],
+    challenges: [
+      "Covering every iPhone from the 6 to the latest, plus old and new iPads with Wi-Fi or cellular, without making the form feel long",
+      "Turning a chat-based way of selling into a clear form that still feels like talking to the shop",
+    ],
+    demo: "https://casidar-gadgets.vercel.app/",
+    github: "https://github.com/Anzzy1/Casidar-Gadgets",
+  },
+  {
     slug: "pro-fitness-gym",
     color: "#e10600",
     title: "Pro Fitness Gym",

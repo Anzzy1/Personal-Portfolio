@@ -123,6 +123,16 @@ const projectThumbs: Record<string, () => React.ReactNode> = {
       <WebsiteBadge className="bg-[#f7ebe0] text-[#4a2c1c] ring-[#2a1c13]" />
     </Frame>
   ),
+  "casidar-gadgets": () => (
+    <Frame className="bg-[linear-gradient(150deg,#3d7bff,#7b4dff)]">
+      <Glow className="-right-3 -top-4 bg-[#7cf5d4]" />
+      {/* The shop's real logo */}
+      <span className="relative block size-[32px] -translate-x-[8px] -rotate-6">
+        <Image src="/images/projects/casidar-gadgets-logo.png" alt="" fill sizes="36px" className="object-contain" />
+      </span>
+      <WebsiteBadge className="bg-white text-[#3d4bff] ring-[#1b1446]" />
+    </Frame>
+  ),
   "pro-fitness-gym": () => (
     <Frame className="bg-[linear-gradient(160deg,#2a0a09,#0b0b0c)]">
       <Glow className="-right-3 -top-5 bg-[#e10600]" />

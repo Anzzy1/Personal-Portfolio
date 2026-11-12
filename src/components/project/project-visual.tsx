@@ -7,6 +7,7 @@ import {
   ChartLineUpIcon,
   ChatCircleDotsIcon,
   CoffeeIcon,
+  DeviceMobileIcon,
   KeyboardIcon,
   LinkIcon,
   MicrophoneIcon,
@@ -15,6 +16,7 @@ import {
   NotebookIcon,
   PackageIcon,
   ReceiptIcon,
+  SealCheckIcon,
   ShoppingBagIcon,
   SparkleIcon,
   TranslateIcon,
@@ -40,6 +42,7 @@ const customPreviews: Record<string, () => React.ReactNode> = {
   "kape-luna": KapeLunaPreview,
   "playlist-cafe": PlaylistCafePreview,
   "pro-fitness-gym": ProFitnessGymPreview,
+  "casidar-gadgets": CasidarGadgetsPreview,
   "portfolio-ai-assistant": AnzyyAiPreview,
 };
 
@@ -522,6 +525,55 @@ function AnzyyAiPreview() {
             alt="Anzyy AI answering a question in English and one in Filipino, with links to projects"
             fill
             sizes="(min-width: 1024px) 320px, 50vw"
+            className="object-cover object-top"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** Casidar Gadgets: the real hero in a browser window, on the shop's blue-to-violet brand */
+function CasidarGadgetsPreview() {
+  const features = [
+    { icon: DeviceMobileIcon, label: "iPhone & iPad" },
+    { icon: ChatCircleDotsIcon, label: "Ask or pre-order" },
+    { icon: SealCheckIcon, label: "Checked units" },
+  ];
+  return (
+    <div className="@container absolute inset-0 isolate overflow-hidden bg-[linear-gradient(150deg,#3d7bff,#6a4dff_60%,#7b4dff)]">
+      <span className="absolute -right-[12%] -top-[35%] -z-10 size-[60%] rounded-full bg-[radial-gradient(circle,#7cf5d4,transparent_65%)] opacity-45 blur-2xl" />
+      <span className="absolute -bottom-[45%] -left-[12%] -z-10 size-[65%] rounded-full bg-[radial-gradient(circle,#9fc0ff,transparent_65%)] opacity-50 blur-2xl" />
+      <span className="absolute inset-0 -z-10 bg-[radial-gradient(rgb(255_255_255/0.13)_1px,transparent_1px)] [background-size:14px_14px] [mask-image:linear-gradient(transparent,black_70%)]" />
+
+      <div className="absolute inset-x-0 top-[5.5%] flex justify-center gap-[1.6cqw] px-[4%] @max-sm:hidden">
+        {features.map(({ icon: Icon, label }) => (
+          <span
+            key={label}
+            className="inline-flex items-center gap-[0.8cqw] whitespace-nowrap rounded-full bg-white/15 px-[1.8cqw] py-[0.8cqw] text-[clamp(8px,1.7cqw,13px)] font-semibold text-white ring-1 ring-white/25 backdrop-blur-sm"
+          >
+            <Icon weight="fill" className="size-[1.25em] text-[#7cf5d4]" />
+            {label}
+          </span>
+        ))}
+      </div>
+
+      {/* The website, in a browser window that runs off the bottom edge */}
+      <div className="absolute inset-x-[7%] bottom-[-4%] top-[19%] overflow-hidden rounded-t-[1.6cqw] bg-white shadow-[0_30px_60px_-20px_rgb(20_12_70/0.6)] ring-1 ring-black/10 @max-sm:top-[10%]">
+        <div className="flex h-[6.5%] min-h-[10px] items-center gap-[0.7cqw] border-b border-[#ededf0] px-[1.6cqw]">
+          <span className="size-[1cqw] min-h-1 min-w-1 rounded-full bg-[#ff5f57]" />
+          <span className="size-[1cqw] min-h-1 min-w-1 rounded-full bg-[#febc2e]" />
+          <span className="size-[1cqw] min-h-1 min-w-1 rounded-full bg-[#28c840]" />
+          <span className="ml-[2cqw] rounded-full bg-[#f5f5f7] px-[1.6cqw] py-[0.3cqw] font-mono text-[clamp(4px,1.1cqw,10px)] text-[#70707a]">
+            casidar-gadgets.vercel.app
+          </span>
+        </div>
+        <div className="relative h-[93.5%]">
+          <Image
+            src="/images/projects/casidar-gadgets.jpg"
+            alt="Casidar Gadgets website: &quot;Welcome to Casidar Gadgets&quot; above photos of iPhones and an iPad"
+            fill
+            sizes="(min-width: 1024px) 640px, 100vw"
             className="object-cover object-top"
           />
         </div>
