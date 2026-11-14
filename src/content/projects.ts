@@ -94,7 +94,6 @@ export const projects: Project[] = [
   },
   {
     slug: "waypoint",
-    cover: "/images/projects/waypoint-cover.jpg",
     color: "#1f6b45",
     title: "Waypoint",
     summary:

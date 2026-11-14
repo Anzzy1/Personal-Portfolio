@@ -3,7 +3,11 @@ import Image from "next/image";
 import type { Project } from "@/content/projects";
 import {
   BarbellIcon,
+  BookOpenTextIcon,
   CalendarCheckIcon,
+  CheckIcon,
+  ListChecksIcon,
+  MapTrifoldIcon,
   ChartLineUpIcon,
   ChatCircleDotsIcon,
   CoffeeIcon,
@@ -37,6 +41,7 @@ export function projectTheme(project: Project) {
 // Hand-made covers for projects that deserve more than the generic window mock
 const customPreviews: Record<string, () => React.ReactNode> = {
   paluwagan: PaluwaganPreview,
+  waypoint: WaypointPreview,
   baonbuddy: BaonBuddyPreview,
   tindahub: TindaHubPreview,
   "kape-luna": KapeLunaPreview,
@@ -233,6 +238,129 @@ function PaluwaganPreview() {
           sizes="(min-width: 1024px) 200px, 30vw"
           className="rounded-[2.2cqw] object-cover object-top"
         />
+      </div>
+    </div>
+  );
+}
+
+/** Waypoint: the real roadmap page on dark slate, with the 8 career paths and a progress card in front */
+function WaypointPreview() {
+  const features = [
+    { icon: MapTrifoldIcon, label: "8 career roadmaps" },
+    { icon: BookOpenTextIcon, label: "Lessons + projects" },
+    { icon: ListChecksIcon, label: "Progress checklist" },
+  ];
+  const roles = [
+    { name: "Frontend", pct: 43, active: true },
+    { name: "Backend", pct: 100 },
+    { name: "Full-Stack", pct: 18 },
+    { name: "AI & ML", pct: 0 },
+    { name: "DevOps", pct: 0 },
+    { name: "Mobile", pct: 0 },
+    { name: "Cloud", pct: 0 },
+    { name: "AI Agent", pct: 0 },
+  ];
+  const stages = ["Foundations", "HTML & CSS", "JavaScript", "Tooling", "React", "Quality", "Ship it"];
+  return (
+    <div className="@container absolute inset-0 isolate overflow-hidden bg-[linear-gradient(150deg,#1f2b30,#0b0f11)]">
+      <span className="absolute -right-[12%] -top-[35%] -z-10 size-[60%] rounded-full bg-[radial-gradient(circle,#7fd49a,transparent_65%)] opacity-40 blur-2xl" />
+      <span className="absolute -bottom-[45%] -left-[12%] -z-10 size-[65%] rounded-full bg-[radial-gradient(circle,#1f6b45,transparent_65%)] opacity-70 blur-2xl" />
+      <span className="absolute inset-0 -z-10 bg-[radial-gradient(rgb(255_255_255/0.1)_1px,transparent_1px)] [background-size:14px_14px] [mask-image:linear-gradient(transparent,black_70%)]" />
+
+      {/* Feature chips */}
+      <div className="absolute inset-x-0 top-[5.5%] flex justify-center gap-[1.6cqw] px-[4%]">
+        {features.map(({ icon: Icon, label }) => (
+          <span
+            key={label}
+            className="inline-flex items-center gap-[0.8cqw] whitespace-nowrap rounded-full bg-white/10 px-[1.8cqw] py-[0.8cqw] text-[clamp(8px,1.7cqw,13px)] font-semibold text-white ring-1 ring-white/20 backdrop-blur-sm"
+          >
+            <Icon weight="fill" className="size-[1.25em] text-[#7fd49a]" />
+            {label}
+          </span>
+        ))}
+      </div>
+
+      {/* The real roadmap page, running off the right and bottom edges */}
+      <div className="absolute left-[24%] top-[19%] w-[96%] overflow-hidden rounded-tl-[1.6cqw] bg-white shadow-[0_30px_60px_-20px_rgb(0_0_0/0.7)] ring-1 ring-black/10">
+        <div className="flex h-[3.4cqw] items-center gap-[0.7cqw] border-b border-[#ededf0] px-[1.6cqw]">
+          <span className="size-[1cqw] rounded-full bg-[#ff5f57]" />
+          <span className="size-[1cqw] rounded-full bg-[#febc2e]" />
+          <span className="size-[1cqw] rounded-full bg-[#28c840]" />
+          <span className="ml-[2cqw] rounded-full bg-[#f5f5f7] px-[1.6cqw] py-[0.3cqw] font-mono text-[clamp(4px,1.1cqw,10px)] text-[#70707a]">
+            waypoint-developer.vercel.app
+          </span>
+        </div>
+        <div className="relative aspect-[1440/900]">
+          <Image
+            src="/images/projects/waypoint-roadmap.jpg"
+            alt="Waypoint's Frontend Developer roadmap: overview, progress card, and the 7 stages"
+            fill
+            sizes="(min-width: 1024px) 800px, 120vw"
+            className="object-cover object-left-top"
+          />
+        </div>
+      </div>
+
+      {/* Floating: pick your path — the 8 roadmaps */}
+      <div className="absolute left-[4%] top-[25%] w-[30%] rounded-[2cqw] bg-white p-[2cqw] text-[#0b0f11] shadow-[0_24px_50px_-16px_rgb(0_0_0/0.7)] ring-1 ring-black/5">
+        <p className="font-mono text-[clamp(4px,1.25cqw,10px)] uppercase tracking-[0.12em] text-[#78909c]">Choose your path</p>
+        <ul className="mt-[1.2cqw] space-y-[0.55cqw]">
+          {roles.map((r) => (
+            <li
+              key={r.name}
+              className={cn(
+                "flex items-center gap-[1cqw] rounded-[0.9cqw] px-[1cqw] py-[0.55cqw] text-[clamp(5px,1.55cqw,12px)] font-semibold",
+                r.active ? "bg-[#0b0f11] text-white" : "text-[#263238]",
+              )}
+            >
+              <span
+                className={cn(
+                  "grid size-[2.2cqw] shrink-0 place-items-center rounded-full",
+                  r.pct === 100 ? "bg-[#1f6b45] text-white" : r.active ? "bg-[#7fd49a] text-[#0b0f11]" : "ring-1 ring-[#cfd8dc]",
+                )}
+              >
+                {r.pct === 100 && <CheckIcon weight="bold" className="size-[60%]" />}
+              </span>
+              <span className="flex-1 truncate">{r.name}</span>
+              {r.pct > 0 && (
+                <span className={cn("font-mono text-[0.8em] tabular-nums", r.active ? "text-[#7fd49a]" : "text-[#1f6b45]")}>
+                  {r.pct}%
+                </span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Floating: progress through the Frontend stages */}
+      <div className="absolute bottom-[5%] right-[4%] w-[44%] rounded-[2cqw] bg-white p-[2.2cqw] text-[#0b0f11] shadow-[0_24px_50px_-16px_rgb(0_0_0/0.7)] ring-1 ring-black/5">
+        <div className="flex items-baseline justify-between gap-[1cqw]">
+          <p className="text-[clamp(6px,1.8cqw,14px)] font-bold tracking-[-0.02em]">Frontend Developer</p>
+          <p className="font-mono text-[clamp(4px,1.2cqw,10px)] text-[#78909c]">9 / 21 lessons</p>
+        </div>
+        <div className="mt-[1.8cqw] flex items-center">
+          {stages.map((s, i) => (
+            <div key={s} className="flex flex-1 items-center last:flex-none">
+              <span
+                title={s}
+                className={cn(
+                  "grid size-[2.8cqw] shrink-0 place-items-center rounded-full font-mono text-[clamp(4px,1.1cqw,9px)] font-bold",
+                  i < 2 && "bg-[#1f6b45] text-white",
+                  i === 2 && "bg-[#0b0f11] text-white ring-[0.5cqw] ring-[#7fd49a]/50",
+                  i > 2 && "bg-[#f1f3f4] text-[#90a4ae]",
+                )}
+              >
+                {i < 2 ? <CheckIcon weight="bold" className="size-[55%]" /> : i + 1}
+              </span>
+              {i < stages.length - 1 && (
+                <span className={cn("h-[0.35cqw] flex-1", i < 2 ? "bg-[#1f6b45]" : "bg-[#eceff1]")} />
+              )}
+            </div>
+          ))}
+        </div>
+        <p className="mt-[1.4cqw] text-[clamp(5px,1.35cqw,11px)] text-[#455a64]">
+          Next up: <span className="font-semibold text-[#0b0f11]">JavaScript</span> · build a weather app
+        </p>
       </div>
     </div>
   );
