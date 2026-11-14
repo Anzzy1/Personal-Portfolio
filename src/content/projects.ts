@@ -93,6 +93,51 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "waypoint",
+    cover: "/images/projects/waypoint-cover.jpg",
+    color: "#1f6b45",
+    title: "Waypoint",
+    summary:
+      "Free, step-by-step developer roadmaps for 8 roles, from Frontend to AI Agent Engineer — short lessons, hand-picked videos and docs, a project per stage, and a checklist that remembers your progress.",
+    category: ["Web System"],
+    featured: true,
+    year: "2026",
+    type: "Personal project · Live",
+    role: "Design & full-stack development",
+    timeline: "Personal build",
+    problem:
+      "People who want to become developers drown in options. There are thousands of tutorials and \"learn X in 30 days\" videos, but no clear order, so beginners jump between topics, lose track of what they've finished, and quit before building anything real.",
+    solution:
+      "Waypoint gives each role one clear path. Pick a roadmap — Frontend, Backend, Full-Stack, AI & ML, DevOps, Mobile, Cloud, or AI Agent Engineer — and work through small stages, each with plain-language lessons, code examples, curated videos and docs, and a project to build. A 10-minute quick start teaches how to study and sets a personal finish date from your weekly hours, and a Tech Stacks page shows what companies actually hire for in each role.",
+    metrics: [
+      { value: "8", label: "Career roadmaps" },
+      { value: "72", label: "Focused lessons" },
+      { value: "296", label: "Hand-picked resources" },
+    ],
+    stack: ["React", "TypeScript", "Vite", "React Router", "Supabase", "PostgreSQL"],
+    architecture: [
+      "All lessons, roadmaps, stages, and tech stacks live in typed data files, so adding a lesson is one object and one id",
+      "Lessons are shared between roadmaps, so finishing Git in Frontend also marks it done in Backend",
+      "Progress, weekly plan, and badges save in the browser first, so the site works fully with no account",
+      "Optional login with Google or a 6-digit email code (no passwords) through Supabase Auth",
+      "When you log in, your device progress is merged into your account and synced across devices",
+      "Supabase Postgres with row-level security, so each user can only read and write their own data",
+      "Hash routing and a relative base, so the built site runs on any static host with no rewrite rules",
+    ],
+    decisions: [
+      "No sign-up wall — learning comes first, and an account is only a way to keep progress across devices",
+      "Video links that aren't one specific video open a YouTube search for a trusted creator, so they never go dead",
+      "Every stage ends with a project, because building is what turns watching into skill",
+      "A black-and-white design with one green accent, plus light and dark themes, so it stays calm and readable",
+    ],
+    challenges: [
+      "Writing beginner-friendly lessons for 8 roles without copying the same content into each one",
+      "Merging guest progress with an existing account on a new device without losing or duplicating anything",
+    ],
+    demo: "https://waypoint-developer.vercel.app/",
+    github: "https://github.com/Anzzy1/Waypoint",
+  },
+  {
     slug: "baonbuddy",
     cover: "/images/projects/baonbuddy-cover.jpg",
     color: "#3a4bff",

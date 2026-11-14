@@ -44,6 +44,18 @@ const projectThumbs: Record<string, () => React.ReactNode> = {
       </span>
     </Frame>
   ),
+  waypoint: () => (
+    <Frame className="bg-[linear-gradient(150deg,#1c262b,#0b0f11)]">
+      <Glow className="-right-3 -top-4 bg-[#7fd49a]" />
+      {/* Waypoint's logo: a path from start to finish */}
+      <svg viewBox="0 0 32 32" className="size-9 -rotate-6 rounded-[10px] ring-[1.5px] ring-white/15">
+        <rect width="32" height="32" rx="8" fill="#000" />
+        <path d="M9 23V16a4 4 0 0 1 4-4h6a4 4 0 0 0 4-4" fill="none" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" />
+        <circle cx="9" cy="23" r="2.6" fill="#fff" />
+        <circle cx="23" cy="8" r="2.6" fill="#7fd49a" />
+      </svg>
+    </Frame>
+  ),
   baonbuddy: () => (
     <Frame className="bg-[#3a4bff]">
       <Glow className="-right-3 -top-4 bg-[#d7f25c]" />
