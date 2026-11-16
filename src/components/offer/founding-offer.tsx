@@ -20,11 +20,13 @@ export function FoundingOffer({
     <section
       aria-label="Founding client offer"
       className={cn(
-        "relative isolate overflow-hidden rounded-3xl bg-[#f2541b] text-white ring-1 ring-black/5",
+        "relative isolate overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#ff8a4c_0%,#f2541b_45%,#c2280f_100%)] text-white shadow-[0_24px_48px_-30px_rgb(242_84_27/0.45)] ring-1 ring-black/5 dark:shadow-[0_20px_40px_-30px_rgb(242_84_27/0.25)]",
         className,
       )}
     >
-      {/* Outsized % watermark */}
+      {/* Light blobs, diagonal stripes, and an outsized % watermark */}
+      <span className="mesh-a absolute -right-[15%] -top-[50%] -z-10 size-[70%] rounded-full bg-[radial-gradient(circle,#ffd29a,transparent_62%)] opacity-40 blur-2xl" />
+      <span className="absolute inset-0 -z-10 bg-[repeating-linear-gradient(135deg,rgb(255_255_255/0.07)_0_2px,transparent_2px_14px)] [mask-image:linear-gradient(90deg,transparent,black_60%)]" />
       <span
         aria-hidden
         className="pointer-events-none absolute -bottom-14 -left-4 -z-10 font-display text-[200px] font-black leading-none tracking-[-0.08em] text-white/10"
@@ -120,8 +122,9 @@ export function SidebarOffer({ onNavigate }: { onNavigate?: () => void }) {
     <Link
       href="/claim"
       onClick={onNavigate}
-      className="group relative isolate block shrink-0 overflow-hidden rounded-2xl bg-[#f2541b] p-3.5 text-white transition-colors duration-200 hover:bg-[#de4a15]"
+      className="group relative isolate block shrink-0 overflow-hidden rounded-2xl bg-[linear-gradient(135deg,#ff8a4c_0%,#f2541b_50%,#c2280f_100%)] p-3.5 text-white shadow-[0_10px_22px_-16px_rgb(242_84_27/0.5)] dark:shadow-[0_8px_18px_-16px_rgb(242_84_27/0.3)] transition-transform duration-200 hover:-translate-y-0.5"
     >
+      <span className="absolute inset-0 -z-10 bg-[repeating-linear-gradient(135deg,rgb(255_255_255/0.07)_0_2px,transparent_2px_12px)]" />
       <span className="flex items-center justify-between gap-2">
         <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-white/85">
           <SealPercentIcon weight="fill" className="size-3.5" />

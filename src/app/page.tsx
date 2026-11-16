@@ -1,6 +1,5 @@
 import { Identity } from "@/components/home/identity";
 import { FeatureCards } from "@/components/home/feature-cards";
-import { FoundingOffer } from "@/components/offer/founding-offer";
 import { ExperienceRows } from "@/components/home/experience-rows";
 import { ProjectRows } from "@/components/home/project-rows";
 import {
@@ -17,7 +16,6 @@ export default function Home() {
         <Identity />
         <FeatureCards />
       </section>
-      <FoundingOffer />
       <ExperienceRows />
       <ProjectRows />
       <ServiceRows />
