@@ -6,7 +6,6 @@ import { motion } from "motion/react";
 import {
   BriefcaseIcon,
   CertificateIcon,
-  GameControllerIcon,
   HouseIcon,
   NotePencilIcon,
   SquaresFourIcon,
@@ -48,10 +47,7 @@ const groups: { label?: string; items: NavItem[] }[] = [
       { href: "/about", label: "About me", icon: UserIcon },
     ],
   },
-  {
-    label: "Just for fun",
-    items: [{ href: "/play", label: "Play Tetris", icon: GameControllerIcon }],
-  },
+  // "Just for fun" → Play Tetris (/play) is hidden for now; the page still exists
 ];
 
 const linkBase =

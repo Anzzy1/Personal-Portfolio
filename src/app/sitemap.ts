@@ -12,7 +12,6 @@ const pages = [
   { path: "/claim", priority: 0.7 },
   { path: "/blog", priority: 0.7 },
   { path: "/certifications", priority: 0.5 },
-  { path: "/play", priority: 0.3 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
