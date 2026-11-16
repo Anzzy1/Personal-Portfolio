@@ -2,6 +2,7 @@
 
 import { useChat } from "@/components/ai/chat-provider";
 import { AiMark } from "@/components/ai/ai-mark";
+import { MeshGradient } from "@/components/ui/mesh-gradient";
 
 const PALUWAGAN_URL = "https://paluwagan-web-page.vercel.app/";
 
@@ -45,9 +46,9 @@ export function FeatureCards() {
         rel="noopener noreferrer"
         className="group relative isolate flex flex-col items-start gap-5 overflow-hidden rounded-2xl bg-[#16A34A] p-6 sm:flex-row sm:items-center text-white ring-1 ring-black/5 transition-transform duration-500 ease-[var(--ease-out)] hover:-translate-y-0.5 dark:ring-white/10"
       >
-        {/* Faint dot grid + grain on Paluwagan green */}
-        <span className="absolute inset-0 -z-10 bg-[radial-gradient(rgb(255_255_255/0.16)_1px,transparent_1px)] [background-size:14px_14px] [mask-image:linear-gradient(90deg,transparent,black)]" />
-        <span className="absolute inset-0 -z-10 [background:var(--grain)] opacity-60" />
+        {/* Flowing green + gold mesh (speeds up on hover), shaded on the text side for legibility */}
+        <MeshGradient colors={["#0b5e2a", "#16a34a", "#2fbf63", "#f5b53d", "#063d1c"]} />
+        <span className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(100deg,rgb(6_40_20/0.55),rgb(6_40_20/0.2)_60%,transparent)]" />
 
         <span className="flex min-w-0 flex-1 flex-col gap-1.5">
           <span className="flex items-center gap-1.5 pr-20 text-[13px] font-medium text-white/80 sm:pr-0">
