@@ -5,7 +5,7 @@ import { AiMark } from "@/components/ai/ai-mark";
 
 const PALUWAGAN_URL = "https://paluwagan-web-page.vercel.app/";
 
-/** Two highlight cards: the AI assistant (dark) and the featured Paluwagan app */
+/** Two highlight cards: the AI assistant (dark mesh) and the featured Paluwagan app */
 export function FeatureCards() {
   const { setOpen } = useChat();
 
@@ -16,7 +16,9 @@ export function FeatureCards() {
         onClick={() => setOpen(true)}
         className="group relative isolate flex items-center gap-5 overflow-hidden rounded-2xl bg-[#141416] p-6 text-left text-white ring-1 ring-black/5 dark:ring-white/10"
       >
-        {/* Subtle grain */}
+        {/* Drifting tangerine mesh + grain */}
+        <span className="mesh-a absolute -left-1/4 -top-1/2 -z-10 size-[80%] rounded-full bg-[radial-gradient(circle,#f2541b,transparent_62%)] opacity-70 blur-2xl" />
+        <span className="mesh-b absolute -bottom-2/3 right-[-10%] -z-10 size-[70%] rounded-full bg-[radial-gradient(circle,#ffb067,transparent_62%)] opacity-40 blur-2xl" />
         <span className="absolute inset-0 -z-10 [background:var(--grain)] opacity-70" />
 
         <span className="flex min-w-0 flex-1 flex-col gap-1.5">

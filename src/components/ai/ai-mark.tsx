@@ -8,7 +8,7 @@ export function AiMark({ className }: { className?: string }) {
   return (
     <span
       className={cn(
-        "relative inline-flex shrink-0 items-center justify-center overflow-hidden bg-[#f2541b] text-white",
+        "relative inline-flex shrink-0 items-center justify-center overflow-hidden bg-[linear-gradient(140deg,#ffa066,#f2541b_55%,#b8360a)] text-white shadow-[0_4px_16px_-4px_var(--accent),inset_0_1px_0_rgb(255_255_255/0.35)]",
         // Size and rounding come from the caller (cn doesn't merge conflicting classes)
         className ?? "size-8 rounded-xl",
       )}

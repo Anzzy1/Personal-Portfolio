@@ -498,6 +498,18 @@ a.row:hover .row-title {
   mask-image: linear-gradient(#000 calc(100% - 1.65em), transparent);
 }
 
+/* Slowly moving tangerine mesh behind the AI card */
+@keyframes mesh-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30%, 20%) scale(1.2); }
+}
+@keyframes mesh-b {
+  0%, 100% { transform: translate(0, 0) scale(1.1); }
+  50% { transform: translate(-25%, -15%) scale(0.9); }
+}
+.mesh-a { animation: mesh-a 12s ease-in-out infinite; }
+.mesh-b { animation: mesh-b 15s ease-in-out infinite; }
+
 /* Pixel-name: text stays hidden while the canvas plays; failsafe reveals it */
 @keyframes pixel-failsafe {
   to {
@@ -582,6 +594,8 @@ a.row:hover .row-title {
   .page,
   .stagger > *,
   .portrait-glow,
+  .mesh-a,
+  .mesh-b,
   .pulse-dot::after,
   .caret::after {
     animation: none;
