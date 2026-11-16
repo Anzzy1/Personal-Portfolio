@@ -192,54 +192,19 @@ body {
   border-radius: 21px;
 }
 
-/* Primary call-to-action: solid tangerine given depth instead of a gradient —
-   a lit top edge, a darker bevel underneath, a warm tinted shadow, and a
-   glossy sheen that sweeps across on hover */
+/* Primary call-to-action: a neutral ink pill (near-black on light, near-white
+   on dark) — minimal and professional, no accent color */
 .cta-primary {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  color: #fff;
-  background: var(--accent);
-  box-shadow:
-    inset 0 1px 0 rgb(255 255 255 / 0.28),
-    inset 0 -2px 0 rgb(0 0 0 / 0.12),
-    0 0 0 1px color-mix(in srgb, var(--accent) 80%, #000),
-    0 6px 16px -6px color-mix(in srgb, var(--accent) 70%, transparent);
-  transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
-}
-.cta-primary::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(105deg, transparent 35%, rgb(255 255 255 / 0.32) 50%, transparent 65%);
-  transform: translateX(-120%);
-  pointer-events: none;
+  color: var(--bg);
+  background: var(--fg);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.08);
+  transition: opacity 0.15s, transform 0.15s;
 }
 .cta-primary:hover {
-  background: color-mix(in srgb, var(--accent) 92%, #000);
-  transform: translateY(-1px);
-  box-shadow:
-    inset 0 1px 0 rgb(255 255 255 / 0.3),
-    inset 0 -2px 0 rgb(0 0 0 / 0.14),
-    0 0 0 1px color-mix(in srgb, var(--accent) 75%, #000),
-    0 10px 22px -8px color-mix(in srgb, var(--accent) 80%, transparent);
-}
-.cta-primary:hover::after {
-  transform: translateX(120%);
-  transition: transform 0.75s var(--ease-out, ease-out);
+  opacity: 0.88;
 }
 .cta-primary:active {
-  transform: translateY(0) scale(0.98);
-  box-shadow:
-    inset 0 2px 4px rgb(0 0 0 / 0.18),
-    0 0 0 1px color-mix(in srgb, var(--accent) 75%, #000);
-}
-@media (prefers-reduced-motion: reduce) {
-  .cta-primary::after {
-    display: none;
-  }
+  transform: scale(0.98);
 }
 
 /* Secondary button: flat surface with a hairline ring */
@@ -258,32 +223,14 @@ body {
 }
 
 /* Active nav item: a quiet tint with a solid edge marker */
-/* Active nav tile: a warm tangerine tint with a lit top edge and a soft
-   accent ring, plus a glowing indicator bar on the left */
+/* Active nav tile: a quiet raised surface with a hairline ring */
 .tile-active {
-  background: color-mix(in srgb, var(--accent) 9%, var(--surface));
-  box-shadow:
-    inset 0 0 0 1px color-mix(in srgb, var(--accent) 22%, transparent),
-    inset 0 1px 0 rgb(255 255 255 / 0.6),
-    0 2px 8px -4px color-mix(in srgb, var(--accent) 45%, transparent);
+  background: var(--surface);
+  box-shadow: 0 0 0 1px var(--ring-strong), 0 1px 2px rgb(17 17 19 / 0.06);
 }
 .dark .tile-active {
-  background: color-mix(in srgb, var(--accent) 13%, var(--surface));
-  box-shadow:
-    inset 0 0 0 1px color-mix(in srgb, var(--accent) 28%, transparent),
-    inset 0 1px 0 rgb(255 255 255 / 0.05),
-    0 2px 10px -4px color-mix(in srgb, var(--accent) 35%, transparent);
-}
-.tile-active::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 10px;
-  bottom: 10px;
-  width: 3px;
-  border-radius: 0 3px 3px 0;
-  background: var(--accent);
-  box-shadow: 0 0 8px 1px color-mix(in srgb, var(--accent) 60%, transparent);
+  background: var(--hover);
+  box-shadow: 0 0 0 1px var(--ring-strong);
 }
 
 /* Small square outlined icon buttons */
