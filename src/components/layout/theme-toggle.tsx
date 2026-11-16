@@ -1,7 +1,8 @@
 "use client";
 
+import { useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
-import { MoonIcon, SunIcon } from "@phosphor-icons/react/dist/ssr";
+import { MonitorIcon, MoonIcon, SunIcon } from "@phosphor-icons/react/dist/ssr";
 import { cn } from "@/lib/utils";
 
 // 8×8 ordered-dither (Bayer) matrix, same pattern as the page-load intro
@@ -65,16 +66,39 @@ function buildMaskFrames(ox: number, oy: number) {
   return frames;
 }
 
-export function ThemeToggle({ className }: { className?: string }) {
-  const { resolvedTheme, setTheme } = useTheme();
+type ThemeChoice = "system" | "light" | "dark";
 
-  function toggle(e: React.MouseEvent<HTMLButtonElement>) {
-    const next = resolvedTheme === "dark" ? "light" : "dark";
+const OPTIONS: { value: ThemeChoice; label: string; Icon: typeof SunIcon }[] = [
+  { value: "system", label: "System theme", Icon: MonitorIcon },
+  { value: "light", label: "Light theme", Icon: SunIcon },
+  { value: "dark", label: "Dark theme", Icon: MoonIcon },
+];
+
+/** Minimal three-way theme switcher: System / Light / Dark */
+export function ThemeToggle({ className }: { className?: string }) {
+  const { theme, resolvedTheme, setTheme } = useTheme();
+  // The stored choice is only known on the client; avoid a hydration mismatch
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
+  const active = mounted ? (theme as ThemeChoice) : undefined;
+
+  function choose(choice: ThemeChoice, e: React.MouseEvent<HTMLButtonElement>) {
+    if (choice === theme) return;
+    const next =
+      choice === "system"
+        ? window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light"
+        : choice;
     const root = document.documentElement;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    if (!document.startViewTransition || reduced) {
-      setTheme(next);
+    // Same resolved colors (e.g. Dark -> System on a dark OS): just save the choice
+    if (next === resolvedTheme || !document.startViewTransition || reduced) {
+      setTheme(choice);
       return;
     }
 
@@ -88,7 +112,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       root.classList.toggle("dark", next === "dark");
       root.classList.toggle("light", next === "light");
       root.style.colorScheme = next;
-      setTheme(next);
+      setTheme(choice);
     });
 
     transition.ready
@@ -103,34 +127,33 @@ export function ThemeToggle({ className }: { className?: string }) {
   }
 
   return (
-    <button
-      type="button"
-      role="switch"
-      onClick={toggle}
-      aria-checked={resolvedTheme === "dark"}
-      aria-label="Dark mode"
-      // The theme is only known on the client, so aria-checked differs from the server render
-      suppressHydrationWarning
+    <div
+      role="group"
+      aria-label="Theme"
       className={cn(
-        "group relative inline-flex h-8 w-[58px] shrink-0 items-center rounded-full bg-surface-2 shadow-[inset_0_0_0_1px_var(--ring)] transition-colors duration-500",
+        "inline-flex shrink-0 items-center gap-px rounded-full border border-border p-0.5",
         className,
       )}
     >
-      {/* Track icons hint at the other side; the knob covers the active one */}
-      <SunIcon weight="fill" className="absolute left-2 size-3.5 text-subtle/70" />
-      <MoonIcon weight="fill" className="absolute right-2 size-3.5 text-subtle/70" />
-
-      {/* Sliding knob — positioned purely by the `dark` class, so it never flickers on load */}
-      <span className="absolute left-1 grid size-6 place-items-center rounded-full bg-fg text-bg shadow-[0_1px_2px_rgb(0_0_0/0.15)] transition-[translate,scale] duration-500 ease-[var(--ease-out)] group-active:scale-90 dark:translate-x-[26px]">
-        <SunIcon
-          weight="fill"
-          className="absolute size-3.5 rotate-0 scale-100 transition-transform duration-500 ease-[var(--ease-out)] dark:rotate-90 dark:scale-0"
-        />
-        <MoonIcon
-          weight="fill"
-          className="absolute size-3.5 -rotate-90 scale-0 transition-transform duration-500 ease-[var(--ease-out)] dark:rotate-0 dark:scale-100"
-        />
-      </span>
-    </button>
+      {OPTIONS.map(({ value, label, Icon }) => {
+        const isActive = active === value;
+        return (
+          <button
+            key={value}
+            type="button"
+            onClick={(e) => choose(value, e)}
+            aria-label={label}
+            aria-pressed={isActive}
+            title={label.replace(" theme", "")}
+            className={cn(
+              "grid size-[22px] place-items-center rounded-full transition-colors duration-200",
+              isActive ? "bg-hover text-fg" : "text-subtle hover:text-fg",
+            )}
+          >
+            <Icon weight={isActive ? "fill" : "regular"} className="size-[13px]" />
+          </button>
+        );
+      })}
+    </div>
   );
 }
