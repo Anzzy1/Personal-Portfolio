@@ -40,9 +40,9 @@ export default function ContactPage() {
 
             <a
               href={`mailto:${profile.email}`}
-              className="group flex items-center gap-4 rounded-2xl border border-accent/25 bg-[linear-gradient(110deg,var(--accent-soft),transparent_70%)] p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-[0_14px_32px_-16px_var(--accent)] sm:p-5"
+              className="group flex items-center gap-4 rounded-2xl border border-border bg-surface p-4 transition-colors duration-200 hover:border-accent/50 hover:bg-hover sm:p-5"
             >
-              <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-accent text-white shadow-[0_8px_18px_-8px_var(--accent)]">
+              <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-accent text-white">
                 <EnvelopeSimpleIcon weight="fill" className="size-6" />
               </span>
               <span className="flex min-w-0 flex-1 flex-col">

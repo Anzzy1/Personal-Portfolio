@@ -10,8 +10,6 @@ export function ContactAiCard() {
 
   return (
     <div className="relative isolate flex flex-col gap-5 overflow-hidden rounded-2xl bg-[#141416] p-6 text-white ring-1 ring-black/5 sm:flex-row sm:items-center dark:ring-white/10">
-      <span className="mesh-a absolute -left-1/4 -top-1/2 -z-10 size-[70%] rounded-full bg-[radial-gradient(circle,#f2541b,transparent_62%)] opacity-60 blur-2xl" />
-      <span className="mesh-b absolute -bottom-2/3 right-[-10%] -z-10 size-[60%] rounded-full bg-[radial-gradient(circle,#ffb067,transparent_62%)] opacity-35 blur-2xl" />
 
       <AiMark className="size-12 rounded-xl" />
 

@@ -177,76 +177,53 @@ body {
 }
 
 /* ---------------------------------------------------------------
-   Sidebar: one clean panel lit by a warm tangerine glow, edged by
-   a hairline gradient border that catches the accent at its corners
+   Sidebar: one clean, flat panel with a hairline border
 ---------------------------------------------------------------- */
 .sb-shell {
-  border: 1px solid transparent;
+  border: 1px solid var(--border);
   border-radius: 22px;
-  background:
-    radial-gradient(130% 42% at 0% 0%, var(--accent-soft), transparent 70%) padding-box,
-    radial-gradient(90% 30% at 100% 100%, var(--accent-soft), transparent 70%) padding-box,
-    linear-gradient(var(--surface), var(--surface)) padding-box,
-    linear-gradient(
-        155deg,
-        color-mix(in srgb, var(--accent) 55%, transparent),
-        var(--border-strong) 28%,
-        var(--border) 72%,
-        color-mix(in srgb, var(--accent) 30%, transparent)
-      )
-      border-box;
-  box-shadow: var(--shadow-float);
+  background: var(--surface);
+  box-shadow: 0 1px 2px rgb(17 17 19 / 0.04), 0 8px 24px -12px rgb(17 17 19 / 0.08);
+}
+.dark .sb-shell {
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.3);
 }
 .sb-panel {
   border-radius: 21px;
 }
 
-/* Primary call-to-action: a glossy tangerine pill */
+/* Primary call-to-action: a solid, flat tangerine pill */
 .cta-primary {
   color: #fff;
-  background: linear-gradient(135deg, #ff8a4c, #f2541b 60%, #e0400a);
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.22), inset 0 0 0 1px rgb(0 0 0 / 0.06),
-    0 6px 14px -8px rgb(242 84 27 / 0.4);
-  transition: box-shadow 0.2s, transform 0.2s;
+  background: var(--accent);
+  transition: background-color 0.15s, transform 0.15s;
 }
 .cta-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.26), inset 0 0 0 1px rgb(0 0 0 / 0.06),
-    0 8px 18px -8px rgb(242 84 27 / 0.5);
-}
-/* Dark mode: same colors, just a fainter glow so it doesn't glare */
-.dark .cta-primary {
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.22), inset 0 0 0 1px rgb(0 0 0 / 0.06),
-    0 4px 10px -8px rgb(242 84 27 / 0.25);
-}
-.dark .cta-primary:hover {
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.26), inset 0 0 0 1px rgb(0 0 0 / 0.06),
-    0 6px 14px -8px rgb(242 84 27 / 0.32);
+  background: color-mix(in srgb, var(--accent) 88%, #000);
 }
 .cta-primary:active {
-  transform: translateY(0);
+  transform: scale(0.98);
 }
 
-/* Soft, physical-feeling button surface */
+/* Secondary button: flat surface with a hairline ring */
 .raised {
   color: var(--fg);
-  background: linear-gradient(var(--raised-from), var(--raised-to));
-  box-shadow: inset 0 0 0 1px var(--ring-strong), inset 0 1px 0 var(--highlight),
-    0 1px 2px rgb(17 17 19 / 0.06), 0 4px 10px rgb(17 17 19 / 0.04);
-  transition: box-shadow 0.14s, transform 0.14s;
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1px var(--ring-strong);
+  transition: background-color 0.14s, box-shadow 0.14s, transform 0.14s;
 }
 .raised:hover {
-  box-shadow: inset 0 0 0 1px var(--ring-hover), inset 0 1px 0 var(--highlight),
-    0 2px 4px rgb(17 17 19 / 0.08), 0 8px 16px rgb(17 17 19 / 0.06);
+  background: var(--hover);
+  box-shadow: inset 0 0 0 1px var(--ring-hover);
 }
 .raised:active {
   transform: translateY(1px);
 }
 
-/* Active nav item: a tangerine-tinted tile with a glowing edge marker */
+/* Active nav item: a quiet tint with a solid edge marker */
 .tile-active {
-  background: linear-gradient(90deg, var(--accent-soft), transparent 85%), var(--surface);
-  box-shadow: inset 0 0 0 1px rgb(242 84 27 / 0.16), 0 1px 2px rgb(17 17 19 / 0.05);
+  background: var(--hover);
+  box-shadow: inset 0 0 0 1px var(--ring);
 }
 .tile-active::before {
   content: "";
@@ -257,7 +234,6 @@ body {
   width: 3px;
   border-radius: 0 3px 3px 0;
   background: var(--accent);
-  box-shadow: 0 0 10px var(--accent);
 }
 
 /* Small square outlined icon buttons */
@@ -319,10 +295,10 @@ body {
   box-shadow: var(--shadow);
 }
 
-/* Project cards glow in their own accent color on hover */
+/* Project cards pick up a hint of their own accent color on hover */
 .project-card:hover {
-  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
-  box-shadow: 0 1px 2px rgb(17 17 19 / 0.05), 0 28px 56px -30px var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+  box-shadow: var(--shadow);
 }
 
 /* Cursor spotlight — coordinates are set by <PointerEffects /> */
@@ -337,7 +313,7 @@ body {
   border-radius: inherit;
   background: radial-gradient(
     280px circle at var(--mx, 50%) var(--my, 50%),
-    var(--accent-soft),
+    color-mix(in srgb, var(--accent) 5%, transparent),
     transparent 65%
   );
   opacity: 0;
@@ -472,18 +448,6 @@ a.row:hover .row-title {
   mask-image: linear-gradient(#000 calc(100% - 1.65em), transparent);
 }
 
-/* Slowly moving tangerine mesh behind the AI card */
-@keyframes mesh-a {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(30%, 20%) scale(1.2); }
-}
-@keyframes mesh-b {
-  0%, 100% { transform: translate(0, 0) scale(1.1); }
-  50% { transform: translate(-25%, -15%) scale(0.9); }
-}
-.mesh-a { animation: mesh-a 12s ease-in-out infinite; }
-.mesh-b { animation: mesh-b 15s ease-in-out infinite; }
-
 /* Pixel-name: text stays hidden while the canvas plays; failsafe reveals it */
 @keyframes pixel-failsafe {
   to {
@@ -568,8 +532,6 @@ a.row:hover .row-title {
   .page,
   .stagger > *,
   .portrait-glow,
-  .mesh-a,
-  .mesh-b,
   .pulse-dot::after,
   .caret::after {
     animation: none;

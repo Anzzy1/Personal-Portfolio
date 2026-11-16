@@ -21,7 +21,7 @@ export function Portrait({ className }: { className?: string }) {
           />
         ) : (
           <>
-            <div className="portrait-glow absolute -inset-1/4 bg-[radial-gradient(circle_at_30%_30%,var(--accent),transparent_45%)] opacity-60" />
+            <div className="portrait-glow absolute -inset-1/4 bg-[radial-gradient(circle_at_30%_30%,var(--accent),transparent_45%)] opacity-25" />
             <div className="absolute inset-0 [background:var(--grain)] opacity-60" />
             <span className="wordmark absolute inset-0 flex items-center justify-center text-[96px] text-white/90">
               {profile.alias.charAt(0)}

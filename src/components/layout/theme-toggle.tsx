@@ -121,7 +121,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       <MoonIcon weight="fill" className="absolute right-2 size-3.5 text-subtle/70" />
 
       {/* Sliding knob — positioned purely by the `dark` class, so it never flickers on load */}
-      <span className="absolute left-1 grid size-6 place-items-center rounded-full bg-gradient-to-b from-[#ffb067] to-[#f2541b] text-white shadow-[0_2px_6px_rgb(242_84_27/0.45),inset_0_1px_0_rgb(255_255_255/0.35)] transition-[translate,scale] duration-500 ease-[var(--ease-out)] group-active:scale-90 dark:translate-x-[26px] dark:from-[#c7cdf5] dark:to-[#7c86d6] dark:shadow-[0_2px_8px_rgb(124_134_214/0.5),inset_0_1px_0_rgb(255_255_255/0.4)]">
+      <span className="absolute left-1 grid size-6 place-items-center rounded-full bg-[#f2541b] text-white shadow-[0_1px_2px_rgb(0_0_0/0.15)] transition-[translate,scale] duration-500 ease-[var(--ease-out)] group-active:scale-90 dark:translate-x-[26px] dark:bg-[#7c86d6]">
         <SunIcon
           weight="fill"
           className="absolute size-3.5 rotate-0 scale-100 transition-transform duration-500 ease-[var(--ease-out)] dark:rotate-90 dark:scale-0"

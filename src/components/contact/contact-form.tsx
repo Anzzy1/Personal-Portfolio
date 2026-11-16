@@ -68,7 +68,7 @@ export function ContactForm() {
       ) : (
         <>
           {/* Conversation */}
-          <div className="flex flex-col gap-3 bg-[radial-gradient(120%_80%_at_0%_0%,var(--accent-soft),transparent_60%)] px-5 py-6 sm:px-6">
+          <div className="flex flex-col gap-3 px-5 py-6 sm:px-6">
             <p className="max-w-[85%] rounded-2xl rounded-tl-md bg-surface-2 px-4 py-3 text-[15px] leading-relaxed text-ink-2">
               Hi there! 👋 Tell me a bit about what you have in mind — a website, a system, an AI chatbot, or just a
               question. English or Filipino is fine.

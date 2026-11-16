@@ -81,7 +81,7 @@ export default function ServicesPage() {
               <section
                 id={s.id}
                 style={themed(s.id)}
-                className="card scroll-mt-24 overflow-hidden bg-[radial-gradient(120%_60%_at_0%_0%,var(--accent-soft),transparent_55%)]"
+                className="card scroll-mt-24 overflow-hidden"
               >
                 <div className="p-6 sm:p-8">
                   <div className="flex items-start gap-4">

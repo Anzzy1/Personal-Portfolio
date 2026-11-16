@@ -28,7 +28,7 @@ export function ClaimForm() {
 
   return (
     <form id="claim-form" onSubmit={onSubmit} className="card relative scroll-mt-24 overflow-hidden shadow-card">
-      <div className="flex items-center gap-3 border-b border-border bg-[linear-gradient(110deg,var(--accent-soft),transparent_70%)] px-5 py-4 sm:px-7">
+      <div className="flex items-center gap-3 border-b border-border bg-surface-2 px-5 py-4 sm:px-7">
         <span className="grid size-10 place-items-center rounded-xl bg-accent text-white shadow-[0_8px_18px_-8px_var(--accent)]">
           <SealCheckIcon weight="fill" className="size-5" />
         </span>

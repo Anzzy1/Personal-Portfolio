@@ -5,7 +5,7 @@ import { AiMark } from "@/components/ai/ai-mark";
 
 const PALUWAGAN_URL = "https://paluwagan-web-page.vercel.app/";
 
-/** Two highlight cards: the AI assistant (dark mesh) and the featured Paluwagan app */
+/** Two highlight cards: the AI assistant (dark) and the featured Paluwagan app */
 export function FeatureCards() {
   const { setOpen } = useChat();
 
@@ -16,9 +16,7 @@ export function FeatureCards() {
         onClick={() => setOpen(true)}
         className="group relative isolate flex items-center gap-5 overflow-hidden rounded-2xl bg-[#141416] p-6 text-left text-white ring-1 ring-black/5 dark:ring-white/10"
       >
-        {/* Drifting tangerine mesh + grain */}
-        <span className="mesh-a absolute -left-1/4 -top-1/2 -z-10 size-[80%] rounded-full bg-[radial-gradient(circle,#f2541b,transparent_62%)] opacity-70 blur-2xl" />
-        <span className="mesh-b absolute -bottom-2/3 right-[-10%] -z-10 size-[70%] rounded-full bg-[radial-gradient(circle,#ffb067,transparent_62%)] opacity-40 blur-2xl" />
+        {/* Subtle grain */}
         <span className="absolute inset-0 -z-10 [background:var(--grain)] opacity-70" />
 
         <span className="flex min-w-0 flex-1 flex-col gap-1.5">
@@ -43,12 +41,9 @@ export function FeatureCards() {
         href={PALUWAGAN_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="group relative isolate flex flex-col items-start gap-5 overflow-hidden rounded-2xl bg-[#16A34A] p-6 sm:flex-row sm:items-center text-white shadow-[0_24px_48px_-24px_rgb(22_163_74/0.7)] ring-1 ring-black/5 transition-transform duration-500 ease-[var(--ease-out)] hover:-translate-y-0.5 dark:ring-white/10"
+        className="group relative isolate flex flex-col items-start gap-5 overflow-hidden rounded-2xl bg-[#16A34A] p-6 sm:flex-row sm:items-center text-white ring-1 ring-black/5 transition-transform duration-500 ease-[var(--ease-out)] hover:-translate-y-0.5 dark:ring-white/10"
       >
-        {/* Paluwagan's green + gold drifting, with a faint dot grid + grain */}
-        <span className="mesh-a absolute -right-[12%] -top-[60%] -z-10 size-[65%] rounded-full bg-[radial-gradient(circle,#F5B53D,transparent_62%)] opacity-60 blur-2xl" />
-        <span className="mesh-b absolute -bottom-[70%] left-[-12%] -z-10 size-[70%] rounded-full bg-[radial-gradient(circle,#34D27A,transparent_62%)] opacity-60 blur-2xl" />
-        <span className="mesh-a absolute -bottom-1/2 right-1/4 -z-10 size-[45%] rounded-full bg-[radial-gradient(circle,#0F8A3C,transparent_62%)] opacity-50 blur-2xl" />
+        {/* Faint dot grid + grain on Paluwagan green */}
         <span className="absolute inset-0 -z-10 bg-[radial-gradient(rgb(255_255_255/0.16)_1px,transparent_1px)] [background-size:14px_14px] [mask-image:linear-gradient(90deg,transparent,black)]" />
         <span className="absolute inset-0 -z-10 [background:var(--grain)] opacity-60" />
 
