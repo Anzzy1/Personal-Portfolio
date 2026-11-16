@@ -81,7 +81,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <Wordmark />
           </Link>
           <div className="flex items-center gap-2">
-            <ThemeToggle />
+            <ThemeToggle variant="button" />
             <Link
               href="/contact"
               aria-label="Contact me"

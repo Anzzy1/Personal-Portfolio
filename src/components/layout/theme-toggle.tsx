@@ -74,8 +74,17 @@ const OPTIONS: { value: ThemeChoice; label: string; Icon: typeof SunIcon }[] = [
   { value: "dark", label: "Dark theme", Icon: MoonIcon },
 ];
 
-/** Minimal three-way theme switcher: System / Light / Dark */
-export function ThemeToggle({ className }: { className?: string }) {
+/**
+ * Minimal three-way theme switcher: System / Light / Dark.
+ * `variant="button"` is a single tap-friendly light/dark button for the mobile top bar.
+ */
+export function ThemeToggle({
+  className,
+  variant = "segmented",
+}: {
+  className?: string;
+  variant?: "segmented" | "button";
+}) {
   const { theme, resolvedTheme, setTheme } = useTheme();
   // The stored choice is only known on the client; avoid a hydration mismatch
   const mounted = useSyncExternalStore(
@@ -124,6 +133,24 @@ export function ThemeToggle({ className }: { className?: string }) {
       )
       .catch(() => {})
       .finally(() => root.classList.remove("theme-vt"));
+  }
+
+  if (variant === "button") {
+    const isDark = mounted && resolvedTheme === "dark";
+    return (
+      <button
+        type="button"
+        onClick={(e) => choose(isDark ? "light" : "dark", e)}
+        aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+        className={cn(
+          // The ::before extends the tap area to ~44px without changing the look
+          "relative grid size-8 shrink-0 place-items-center rounded-full border border-border text-fg transition-colors before:absolute before:-inset-1.5 before:content-[''] active:bg-hover",
+          className,
+        )}
+      >
+        {isDark ? <SunIcon className="size-[17px]" /> : <MoonIcon className="size-[17px]" />}
+      </button>
+    );
   }
 
   return (
