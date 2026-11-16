@@ -112,7 +112,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       // The theme is only known on the client, so aria-checked differs from the server render
       suppressHydrationWarning
       className={cn(
-        "group relative inline-flex h-8 w-[58px] shrink-0 items-center rounded-full bg-surface-2 shadow-[inset_0_0_0_1px_var(--ring),inset_0_1px_3px_rgb(17_17_19/0.08)] transition-colors duration-500 dark:bg-[#1a1d2e] dark:shadow-[inset_0_0_0_1px_rgb(255_255_255/0.08),inset_0_1px_3px_rgb(0_0_0/0.5)]",
+        "group relative inline-flex h-8 w-[58px] shrink-0 items-center rounded-full bg-surface-2 shadow-[inset_0_0_0_1px_var(--ring)] transition-colors duration-500",
         className,
       )}
     >
@@ -121,14 +121,14 @@ export function ThemeToggle({ className }: { className?: string }) {
       <MoonIcon weight="fill" className="absolute right-2 size-3.5 text-subtle/70" />
 
       {/* Sliding knob — positioned purely by the `dark` class, so it never flickers on load */}
-      <span className="absolute left-1 grid size-6 place-items-center rounded-full bg-[#f2541b] text-white shadow-[0_1px_2px_rgb(0_0_0/0.15)] transition-[translate,scale] duration-500 ease-[var(--ease-out)] group-active:scale-90 dark:translate-x-[26px] dark:bg-[#7c86d6]">
+      <span className="absolute left-1 grid size-6 place-items-center rounded-full bg-fg text-bg shadow-[0_1px_2px_rgb(0_0_0/0.15)] transition-[translate,scale] duration-500 ease-[var(--ease-out)] group-active:scale-90 dark:translate-x-[26px]">
         <SunIcon
           weight="fill"
           className="absolute size-3.5 rotate-0 scale-100 transition-transform duration-500 ease-[var(--ease-out)] dark:rotate-90 dark:scale-0"
         />
         <MoonIcon
           weight="fill"
-          className="absolute size-3.5 -rotate-90 scale-0 text-[#1a1d2e] transition-transform duration-500 ease-[var(--ease-out)] dark:rotate-0 dark:scale-100"
+          className="absolute size-3.5 -rotate-90 scale-0 transition-transform duration-500 ease-[var(--ease-out)] dark:rotate-0 dark:scale-100"
         />
       </span>
     </button>
