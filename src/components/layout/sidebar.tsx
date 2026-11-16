@@ -58,10 +58,10 @@ export function SidebarPanel({
         onClick={onNavigate}
         className="cta-primary group flex h-[46px] shrink-0 items-center gap-2.5 rounded-full pl-4 pr-2 text-[15px] font-semibold"
       >
-        <EnvelopeSimpleIcon weight="bold" className="size-[18px] opacity-80" />
+        <EnvelopeSimpleIcon weight="bold" className="size-[18px] text-white/90" />
         <span className="flex-1 whitespace-nowrap">Let&apos;s talk</span>
         {profile.available && (
-          <span className="inline-flex h-[26px] items-center gap-1.5 rounded-full bg-bg/15 px-2.5 text-[11px] font-semibold ring-1 ring-bg/20">
+          <span className="inline-flex h-[26px] items-center gap-1.5 rounded-full bg-white/18 px-2.5 text-[11px] font-semibold text-white ring-1 ring-white/20">
             <span className="pulse-dot size-1.5 rounded-full bg-[#9ff2b8] text-[#9ff2b8]" />
             Available
           </span>

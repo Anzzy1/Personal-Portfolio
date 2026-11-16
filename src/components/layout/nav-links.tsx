@@ -99,14 +99,14 @@ export function NavLinks({
                 )}
                 <Icon
                   weight={active ? "fill" : "regular"}
-                  className={cn("relative size-[18px] shrink-0", active ? "text-fg" : "text-subtle")}
+                  className={cn("relative size-[18px] shrink-0", active ? "text-accent" : "text-subtle")}
                 />
                 <span className="relative flex-1">{item.label}</span>
                 {item.count !== undefined && (
                   <span
                     className={cn(
                       "relative inline-flex h-5 min-w-5 items-center justify-center rounded-full px-1.5 text-[11px] font-semibold tabular-nums",
-                      active ? "bg-fg text-bg" : "bg-surface-2 text-muted",
+                      active ? "bg-accent text-white" : "bg-surface-2 text-muted",
                     )}
                   >
                     {item.count}
